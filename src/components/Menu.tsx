@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Menu() {
   return (
-      <div className=" bg-black-dark bg-opacity-70">
+      <div className=" bg-black-dark">
         <div className="mx-auto flex h-20 max-w-screen-xl items-center justify-between">
           <div className="flex gap-8">
             {/* Logo */}

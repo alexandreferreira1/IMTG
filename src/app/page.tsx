@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Menu } from "@/components/Menu";
+import { Footer } from "@/components/Footer"
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
               className="h-[680px] w-[550px] object-cover"
             />
 
-            <div className="absolute bottom-0 right-0 flex h-[200px] w-[403px] items-center justify-center bg-black px-10">
+            <div className="absolute bottom-0 right-0 flex h-[200px] w-[403px] items-center justify-center bg-[#324049] px-10">
               <p className="mx-auto w-full shrink-0 text-left text-[32px] font-bold leading-[125%] text-white">
                 “Porque a graça de Deus se manisfestou”
               </p>
@@ -81,7 +82,7 @@ export default function Home() {
               tristique...
             </p>
 
-            <button className="w-fit animate-fade-right animate-ease-in animate-fill-both relative flex items-center gap-2 text-xs text-black transition-all after:absolute after:-bottom-[4px] after:h-[1px] after:w-[142px] after:bg-black after:transition-all after:duration-1000 after:content-[''] hover:font-medium hover:text-black-dark hover:duration-1000 hover:after:w-0">
+            <button className="animate-fade-right animate-ease-in animate-fill-both relative flex w-fit items-center gap-2 text-xs text-black transition-all after:absolute after:-bottom-[4px] after:h-[1px] after:w-[142px] after:bg-black after:transition-all after:duration-1000 after:content-[''] hover:font-medium hover:text-red-regular hover:duration-1000 hover:after:w-0 hover:after:bg-red-regular">
               <span className="shrink-0">CONTINUAR LENDO</span>
               <ArrowRight size={16} />
             </button>
@@ -90,7 +91,6 @@ export default function Home() {
 
         {/* Faça uma visita */}
         <div className="relative h-[600px] bg-gray-thin">
-
           {/* Nossa Localização */}
           <div className="mx-auto max-w-screen-xl pt-[100px]">
             <div>
@@ -151,30 +151,8 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div>
-          <div>
-            <p></p>
-            <p></p>
-          </div>
-
-          <div>
-          <Image
-                  src="/img/churchlogo2.svg"
-                  width={220}
-                  height={132}
-                  alt="Fachada da Igreja"
-                  className="mx-auto h-[132px] w-[220px]"
-                />
-          </div>
-
-          <div>
-            <button>Facebook</button>
-            <button>Email</button>
-          </div>
-        </div>
+       <Footer />
       </div>
-
-      {/* Fim */}
     </>
   );
 }
