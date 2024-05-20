@@ -1,42 +1,24 @@
 import Image from "next/image";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Menu } from "@/components/Menu";
-import { Footer } from "@/components/Footer"
+import { Footer } from "@/components/Footer";
+import { ButtonArrow } from "@/components/ButtonArrow";
 
 export default function Home() {
   return (
     <>
       {/* Menu e Banner */}
       <div
-        className="relative h-[700px] bg-[url('/img/fachada.jpg')] bg-cover bg-no-repeat"
+        className="relative h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-no-repeat"
         style={{ backgroundPositionY: "50%" }}
       >
         {/* Menu */}
         <Menu />
 
-        <div className="mx-auto mt-[440px] max-w-screen-xl text-white">
-          <p className="text-6xl">
-            <b>Seja bem vindo!</b>
-          </p>
-          <p className="text-6xl">
-            <b>Um lugar para família.</b>
-          </p>
+        <div className="mx-auto mt-[440px] max-w-screen-xl text-center text-6xl font-bold text-white">
+          <p>Seja bem vindo!</p>
+          <p>Um lugar para família</p>
         </div>
-        {/* Banner */}
-        {/* <div>
-          <div className="overflow-hidden w-full">
-            <Image
-              src="/img/fachada.jpg"
-              width={1536}
-              height={1152}
-              alt="Fachada da Igreja"
-              className="mt-[-352px]"
-            />
-          </div>
-
-
-
-        </div> */}
       </div>
 
       {/* Main */}
@@ -48,7 +30,7 @@ export default function Home() {
               src="/img/fachada-exemplo.jpg"
               width={550}
               height={680}
-              alt="Logotipo da IMTG"
+              alt="Exemple Image"
               className="h-[680px] w-[550px] object-cover"
             />
 
@@ -82,10 +64,7 @@ export default function Home() {
               tristique...
             </p>
 
-            <button className="animate-fade-right animate-ease-in animate-fill-both relative flex w-fit items-center gap-2 text-xs text-black transition-all after:absolute after:-bottom-[4px] after:h-[1px] after:w-[142px] after:bg-black after:transition-all after:duration-1000 after:content-[''] hover:font-medium hover:text-red-regular hover:duration-1000 hover:after:w-0 hover:after:bg-red-regular">
-              <span className="shrink-0">CONTINUAR LENDO</span>
-              <ArrowRight size={16} />
-            </button>
+            <ButtonArrow />
           </div>
         </div>
 
@@ -151,7 +130,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-       <Footer />
+        <Footer />
       </div>
     </>
   );

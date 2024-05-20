@@ -23,7 +23,7 @@ export function Menu() {
             </div>
           </div>
 
-          <button className="h-14 rounded-[4px] bg-red-regular px-7 text-white">
+          <button className="h-14 rounded-[4px] bg-red-regular px-7 text-white hover:bg-red-light">
             FAÇA SUA CONTRIBUIÇÃO
           </button>
         </div>

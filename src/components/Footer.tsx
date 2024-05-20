@@ -22,7 +22,7 @@ export function Footer() {
         <div className="h-[45px] w-[215px] text-right ">
           <button className="pr-3 ">
             <Image
-              src="/img/facebook.svg"
+              src="/img/icons/facebook.svg"
               width={45}
               height={45}
               alt="logo facebook"
@@ -31,7 +31,7 @@ export function Footer() {
           </button>
           <button className="">
             <Image
-              src="/img/email.svg"
+              src="/img/icons/email.svg"
               width={45}
               height={45}
               alt="logo email"
