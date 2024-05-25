@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
-export default function Home() {
+export default function Devocionais2() {
   return (
     <>
       {/* Menu e Banner */}
@@ -46,7 +45,7 @@ export default function Home() {
           frutos são possíveis apenas quando fazemos a vontade de Deus.
         </p>
 
-        <p className="text-lg leading-[140%] text-gray-medium">
+        <div className="text-lg leading-[140%] text-gray-medium">
           <div className="text-2xl font-bold text-black">
             A vontade preceptiva
           </div>
@@ -69,7 +68,7 @@ export default function Home() {
           contra o assassinato. Mesmo assim, Deus decretou a crucificação para
           um bem final maior, a saber, a nossa salvação e a Sua glória (
           <span className="font-semibold text-black">Romanos 8:28</span>).
-        </p>
+        </div>
         <Image
           src="/img/images/Frame 40.jpg"
           width={740}
@@ -107,7 +106,7 @@ export default function Home() {
           <span className="font-semibold text-black">Romanos 8:28</span>).
         </p>
 
-        <div className="relative mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-medium py-7">
+        <div className="relative mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">
           <Image
             src="/img/icons/applause.svg"
             width={40}
@@ -117,7 +116,7 @@ export default function Home() {
           />
           {/* Contador */}
           <div className="absolute left-[224px] top-[55px] h-[20px] w-[20px] rounded-full bg-red-regular"></div>
-          <p className="absolute absolute left-[226px] top-[58px] text-[10px] font-medium text-white">
+          <p className="absolute left-[226px] top-[58px] text-[10px] font-medium text-white">
             +10
           </p>
           <div>

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-import { ArrowCircleRight } from "@phosphor-icons/react/dist/ssr";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { ButtonArrow } from "@/components/ButtonArrow";
 
-export default function Sobre() {
+export default function Devocionais() {
   return (
     <>
       {/* Menu */}
