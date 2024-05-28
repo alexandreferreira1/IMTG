@@ -53,7 +53,7 @@ export default function Devocionais() {
 
           {/* Coluna 2 */}
           <div>
-            <button className="animate-fade-right animate-ease-in animate-fill-both relative flex w-fit items-center gap-[170px] text-xl text-gray-medium transition-all after:absolute after:-bottom-[4px] after:h-[1px] after:w-[368px] after:bg-gray-medium after:transition-all after:duration-1000 after:content-['']   hover:text-black hover:duration-1000 hover:after:bg-black">
+            <button className="relative flex w-fit items-center gap-[170px] text-xl text-gray-medium transition-all before:absolute before:-bottom-[4px] before:h-[1px] before:w-[368px] before:bg-gray-regular before:transition-all before:duration-1000 before:content-['']   hover:text-black hover:duration-1000 after:content-[''] after:-bottom-[4px] after:h-[1px] after:w-0 hover:after:w-[368px] after:bg-black after:absolute after:transition-all after:duration-1000 after:ease-out">
               <span className="shrink-0">Pesquisar um tema</span>
               <MagnifyingGlass size={24} />
             </button>

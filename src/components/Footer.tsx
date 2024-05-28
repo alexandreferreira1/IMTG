@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CircleButton from "./CircleButton";
 
 export function Footer() {
   return (
@@ -19,25 +20,9 @@ export function Footer() {
           />
         </div>
 
-        <div className="h-[45px] w-[215px] text-right ">
-          <button className="pr-3 ">
-            <Image
-              src="/img/icons/facebook.svg"
-              width={45}
-              height={45}
-              alt="logo facebook"
-              className="mx-auto h-[45px] w-[45px]"
-            />
-          </button>
-          <button className="">
-            <Image
-              src="/img/icons/email.svg"
-              width={45}
-              height={45}
-              alt="logo email"
-              className="mx-auto h-[45px] w-[45px]"
-            />
-          </button>
+        <div className="h-[45px] w-[215px] text-right">
+          <CircleButton logo="/img/icons/facebook.svg" variation="primary" />
+          <CircleButton logo="/img/icons/email.svg" variation="primary"/>
         </div>
       </div>
     </div>

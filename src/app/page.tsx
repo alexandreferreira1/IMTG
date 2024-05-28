@@ -16,7 +16,7 @@ export default function Home() {
         <Menu />
 
         <div className="mx-auto mt-[440px] max-w-screen-xl text-center text-6xl font-bold text-white">
-          <p>Seja bem vindo!</p>
+          <p >Seja bem vindo!</p>
           <p>Um lugar para família</p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex h-[435px] w-[494px] flex-col gap-6 ">
+          <div className="flex h-[435px] w-[494px] flex-col gap-6">
             <Image
               src="/img/logoietg.png"
               width={82}
@@ -68,65 +68,70 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Faça uma visita */}
-        <div className="relative h-[600px] bg-gray-thin">
+        {/* Faça uma visita! */}
+        <div className="bg-gray-thin">
           {/* Nossa Localização */}
-          <div className="mx-auto max-w-screen-xl pt-[100px]">
+          <div className="mx-auto flex max-w-screen-xl justify-between items-center">
             <div>
-              <p className="text-gray-medium">NOSSA LOCALIZAÇÃO</p>
-              <p className="pt-1 text-5xl font-bold text-black">
-                Faça uma visita!
-              </p>
-            </div>
-
-            {/* Horário e Endereço */}
-            <div className="flex gap-16 pt-12 text-center">
               <div>
-                <Image
-                  src="/img/churchlogo1.svg"
-                  width={220}
-                  height={132}
-                  alt="Fachada da Igreja"
-                  className="h-[132px] w-[220px]"
-                />
-
-                <h2 className="text-2xl font-bold text-black">
-                  Horário de Culto
-                </h2>
-                <p className="font-semibold text-black">Culto de Celebração</p>
-                <p className="text-gray-medium">Domingo às 18h</p>
-                <p className="font-semibold text-black">Culto de Libertação</p>
-                <p className="text-gray-medium">Quinta às 19h</p>
-              </div>
-
-              <div className="max-w-[275px]">
-                <Image
-                  src="/img/churchlogo2.svg"
-                  width={220}
-                  height={132}
-                  alt="Fachada da Igreja"
-                  className="mx-auto h-[132px] w-[220px]"
-                />
-
-                <h2 className="text-2xl font-bold text-black">Endereço</h2>
-                <p className="text-gray-medium">
-                  Rua Dr. Miguel Vieira Ferreira, nº 155, Bairro Nossa Sra. das
-                  Graças Campo Grande - MS CEP 79116-470
+                <p className="text-gray-medium">NOSSA LOCALIZAÇÃO</p>
+                <p className="pt-1 text-5xl font-bold text-black">
+                  Faça uma visita!
                 </p>
               </div>
-            </div>
-          </div>
 
-          {/* Mapa */}
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14955.70383589071!2d-54.6461527!3d-20.4271279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e7a9c82c3cf1%3A0x50cb1fc890a959c7!2sIgreja%20Ministerial%20Tempo%20da%20Gra%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1714534417159!5m2!1spt-BR!2sbr"
-            width="48%"
-            height="600"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="absolute right-0 top-0"
-          />
+              {/* Horário e Endereço */}
+              <div className="flex gap-16 pt-12 text-center">
+                <div>
+                  <Image
+                    src="/img/icons/churchlogo1.svg"
+                    width={220}
+                    height={132}
+                    alt="Fachada da Igreja"
+                    className="h-[132px] w-[220px]"
+                  />
+
+                  <h2 className="text-2xl font-bold text-black">
+                    Horário de Culto
+                  </h2>
+                  <p className="font-semibold text-black">
+                    Culto de Celebração
+                  </p>
+                  <p className="text-gray-medium">Domingo às 18h</p>
+                  <p className="font-semibold text-black">
+                    Culto de Libertação
+                  </p>
+                  <p className="text-gray-medium">Quinta às 19h</p>
+                </div>
+
+                <div className="max-w-[275px]">
+                  <Image
+                    src="/img/icons/churchlogo2.svg"
+                    width={220}
+                    height={132}
+                    alt="Fachada da Igreja"
+                    className="mx-auto h-[132px] w-[220px]"
+                  />
+
+                  <h2 className="text-2xl font-bold text-black">Endereço</h2>
+                  <p className="text-gray-medium">
+                    Rua Dr. Miguel Vieira Ferreira, nº 155, Bairro Nossa Sra.
+                    das Graças Campo Grande - MS CEP 79116-470
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* Mapa */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14955.70383589071!2d-54.6461527!3d-20.4271279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e7a9c82c3cf1%3A0x50cb1fc890a959c7!2sIgreja%20Ministerial%20Tempo%20da%20Gra%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1714534417159!5m2!1spt-BR!2sbr"
+              width="655"
+              height="500"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className=""
+            />
+          </div>
         </div>
 
         {/* Footer */}

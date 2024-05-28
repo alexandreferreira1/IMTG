@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
@@ -62,14 +63,19 @@ export default function Sobre() {
         </div>
 
         {/* Sobre 2 */}
-        <div className=" py-10">
-          <div className="mx-auto flex w-[705px] flex-col items-center py-10">
-            <p className="text-5xl font-bold text-black">
-              “Porque a graça de Deus se manifestou, trazendo salvação para
-              todos os homens.”
+        <div className="py-10">
+          <div className="flex flex-col items-center mx-auto w-[705px] py-10">
+            <p className=" text-center text-5xl font-bold  text-black">
+              “Porque a graça de Deus se manifestou, trazendo salvação
             </p>
-            <p className="text-2xl text-gray-medium">Tito 2:11</p>
+            <div className="flex flex-col w-fit ">
+              <p className="animate-typing overflow-hidden whitespace-nowrap border-r-4 pr-1 text-center text-5xl font-bold  text-black">
+                para todos os homens."
+              </p>
+            </div>
+            <p className="text-center text-2xl text-gray-medium">Tito 2:11</p>
           </div>
+
           <p className="pt-10 text-lg leading-[140%] text-gray-medium">
             Donec pulvinar est id neque sollicitudin consectetur. Nullam at
             metus dapibus, tempor arcu non, ultricies tellus. Integer egestas

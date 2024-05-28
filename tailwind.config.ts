@@ -16,6 +16,28 @@ const config: Config = {
       boxShadow: {
         '3xl': '0px 4px 15px 0px rgba(0,0,0,0.20)'
       },
+      keyframes: {
+        typing: {
+          '0%': {
+            width: '0%',
+            visibility: 'hidden',
+          },
+          '40%': {
+            width: '100%',
+          },
+          '100%': {
+            width: '100%',
+          },
+        },
+        blink: {
+          '50%': {
+            borderColor: 'transparent',
+          },
+        },
+      },
+      animation: {
+        typing: 'typing 5s steps(19) infinite, blink .8s step-end infinite',
+      },
     },
 
     colors: {
