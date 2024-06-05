@@ -26,7 +26,7 @@ export default function Devocionais2() {
       </div>
 
       {/* Main */}
-      <div className="m-auto flex max-w-[760px] flex-col gap-8 pb-24 pt-16">
+      <div className="m-auto flex max-w-[760px] flex-col gap-8 pb-24 pt-16 mx-5 xl:mx-0">
         <CircleButton icon="ShareFat"/>
 
         <p className="text-lg leading-[140%] text-gray-medium">

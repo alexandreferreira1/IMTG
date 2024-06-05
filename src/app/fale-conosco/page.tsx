@@ -22,7 +22,7 @@ export default function FaleConosco() {
       <Menu />
 
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl py-28">
+      <div className="mx-auto max-w-screen-xl">
         {/* Título */}
         <Title
           title="Como podemos te ajudar?"
@@ -31,9 +31,8 @@ export default function FaleConosco() {
         />
 
         {/* Formulário */}
-        <div className="">
-          <form>
-            <div className="mx-auto flex w-full max-w-[656px] flex-col gap-8">
+
+          <form className="mx-auto flex w-full max-w-[656px] flex-col gap-8 px-5">
               <Input
                 id="name"
                 icon={<User size={24} className="text-black" />}
@@ -65,16 +64,15 @@ export default function FaleConosco() {
                 name="message"
                 placeholder="Mensagem"
               />
-              <Button title="Enviar" variation="secondary" />
-            </div>
+          <Button title="Enviar" variation="secondary" /> 
+          {/* //TODO:colocar fullsize via js */}
           </form>
-        </div>
       </div>
 
       {/* Contato */}
-      <div className=" bg-gray-thin py-24">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-32">
-          <div className="max-w-[320px]">
+      <div className=" bg-gray-thin py-24 mt-10 xl:mt-0">
+        <div className="mx-auto flex flex-col md:flex-row max-w-screen-xl items-center justify-center gap-16 xl:gap-32">
+          <div className="w-full max-w-[320px] flex flex-col items-center xl:items-start px-5 xl:px-0 ">
             <div className="flex gap-3 pb-8">
               <Phone size={24} className="text-red-regular" />
               <p className="text-lg">67 99208-2436</p>
@@ -84,7 +82,7 @@ export default function FaleConosco() {
               <div>
                 <MapPinLine size={24} className="text-red-regular" />
               </div>
-              <p className="text-lg leading-6">
+              <p className="text-lg leading-6 text-center xl:text-left">
                 Rua Dr. Miguel Vieira Ferreira, 155, Vila Nossa Sra. das Graças
               </p>
             </div>
@@ -95,7 +93,7 @@ export default function FaleConosco() {
             </div>
           </div>
 
-          <div className="flex max-w-[321px] flex-col gap-3">
+          <div className="flex max-w-[321px] flex-col gap-6 xl:gap-3">
             <p className="text-center text-4xl font-bold text-black">
               Entre em contato com a gente!
             </p>

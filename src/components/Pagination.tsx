@@ -4,7 +4,7 @@ import { CaretCircleLeft, CaretCircleRight } from "@phosphor-icons/react/dist/ss
 export default function Pagination() {
     return (
         <>
-            <div className="mt-24 flex">
+            <div className="my-24 flex mx-5 xl:mx-0 justify-center xl:justify-start">
             <button className="">
                     <CaretCircleLeft size={31} weight="light" className="text-black  hover:fill-red-regular mr-[10px] hidden"/>
                 </button>

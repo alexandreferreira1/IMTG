@@ -1,7 +1,9 @@
+'use client'
 import Image from "next/image";
 import { Button } from "./Button";
 import Link from "next/link";
 import clsx from "clsx";
+import { NavbarMobile } from "./NavbarMobile";
 
 interface MenuProps {
   transparent?: boolean;
@@ -43,6 +45,7 @@ export function Menu({transparent = false}: MenuProps) {
           </div>
         </div>
 
+        {/* <NavbarMobile /> */}
 
         <Link href="/contribuicao" className="hidden xl:block">
           <Button title="FAÇA SUA CONTRIBUIÇÃO" size="text-sm" />

@@ -10,11 +10,11 @@ export default function Contribuicao() {
       <Menu />
 
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl py-28">
+      <div className="mx-auto max-w-screen-xl py-10 md:py-24">
         {/* Pix */}
-        <div className="flex items-center justify-center gap-32">
-          <div className=" w-[600px]">
-            <h2 className="pb-6 text-4xl font-extrabold text-black">
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-20 xl:gap-32 text-center xl:text-left px-5 xl:px-0">
+          <div className=" md:w-[600px]">
+            <h2 className="pb-6 text-3xl xl:text-4xl font-extrabold text-black">
               FAÇA UMA CONTRIBUIÇÃO COM PIX ATRAVÉS DO QR CODE
             </h2>
             <p className="pb-6 text-lg text-gray-regular">
@@ -35,16 +35,16 @@ export default function Contribuicao() {
               width={322}
               height={322}
               alt="Whatsapp Icon"
-              className="h-[322px] w-[322px] object-cover"
+              className="xl:h-[322px] xl:w-[322px] w-52 object-cover"
             />
           </div>
         </div>
       </div>
 
       {/* Contato */}
-      <div className=" bg-gray-thin py-24">
-        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-12">
-          <div className="w-[870px] text-center text-black">
+      <div className=" bg-gray-thin py-12 md:py-24">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-12 xl:px-0 px-10">
+          <div className="xl:w-[870px] text-center text-black">
             <h3 className="pb-4 text-[40px] font-bold">
               Sua doação será destinada
             </h3>
@@ -57,9 +57,9 @@ export default function Contribuicao() {
           </div>
 
           {/* CARDS */}
-          <div className="flex gap-24">
+          <div className="flex md:flex-row flex-col gap-12 xl:gap-24">
             {/* 1 */}
-            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white p-12">
+            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white md:p-12 p-3">
               <div className="pb-6 text-red-regular">
                 <HandHeart size={60} />
               </div>
@@ -67,7 +67,7 @@ export default function Contribuicao() {
               <h4 className="pb-2 text-2xl font-bold text-black">
                 Trabalho Social
               </h4>
-              <p className="w-64 text-center text-gray-medium">
+              <p className="xl:w-64 text-center text-gray-medium">
                 Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
                 sed, porttitor feugiat ligula. Ut interdum augue odio, nec
                 egestas lectus fermentum nec.
@@ -75,7 +75,7 @@ export default function Contribuicao() {
             </div>
 
             {/* 2 */}
-            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white p-12">
+            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white md:p-12 p-3 text-center">
               <div className="pb-6 text-red-regular">
                 <Church size={60} />
               </div>
@@ -83,7 +83,7 @@ export default function Contribuicao() {
               <h4 className="pb-2 text-2xl font-bold text-black">
                 Edificação do Templo
               </h4>
-              <p className="w-64 text-center text-gray-medium">
+              <p className="xl:w-64 text-center text-gray-medium">
                 Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
                 sed, porttitor feugiat ligula. Ut interdum augue odio, nec
                 egestas lectus fermentum nec.

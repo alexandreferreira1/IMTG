@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
+import { Title } from "@/components/Title";
 
 export default function Sobre() {
   return (
@@ -10,17 +11,13 @@ export default function Sobre() {
       <Menu />
 
       {/* Main */}
-      <div className="mx-auto max-w-[1016px] py-24">
+      <div className="mx-auto max-w-[1016px] ">
         {/* Título */}
-        <div className="pb-24 text-center">
-          <h1 className="text-6xl font-bold text-black">Sobre Nós</h1>
-          <h3 className="text-xl text-gray-medium">
-            Conheça um pouco da nossa história
-          </h3>
-        </div>
+        <Title title="Sobre Nós" subtitle="Conheça um pouco da nossa história" />
+
 
         {/* Sobre 1 */}
-        <div className="flex gap-10">
+        <div className="flex flex-col xl:flex-row justify-center gap-10 mx-5 xl:mx-0">
           <Image
             src="/img/fachada-exemplo.jpg"
             width={498}
@@ -29,7 +26,7 @@ export default function Sobre() {
             className="h-[588px] w-[498px] object-cover"
           />
 
-          <div className="flex h-[588px] w-[480px] flex-col gap-5">
+          <div className="flex xl:h-[588px] xl:w-[480px] flex-col gap-5 items-center xl:items-start">
             <Image
               src="/img/logoietg.png"
               width={82}
@@ -38,10 +35,10 @@ export default function Sobre() {
               className="h-[114px] w-[82px]"
             />
             <div>
-              <h3 className="font-medium text-gray-medium">
+              <h3 className="font-medium text-gray-medium text-center xl:text-left">
                 UM POUCO DA NOSSA HISTÓRIA E DOS NOSSOS VALORES
               </h3>
-              <h2 className="mt-2 text-[46px] font-bold leading-[125%] text-black">
+              <h2 className="mt-2 text-[46px] font-bold leading-[125%] text-black text-center xl:text-left">
                 Nossa igreja começou há 7 anos atrás
               </h2>
             </div>
@@ -63,13 +60,13 @@ export default function Sobre() {
         </div>
 
         {/* Sobre 2 */}
-        <div className="py-10">
-          <div className="flex flex-col items-center mx-auto w-[705px] py-10">
+        <div className="py-10  mx-5 xl:mx-0">
+          <div className="flex flex-col items-center mx-auto xl:w-[705px] py-10">
             <p className=" text-center text-5xl font-bold  text-black">
               “Porque a graça de Deus se manifestou, trazendo salvação
             </p>
-            <div className="flex flex-col w-fit ">
-              <p className="animate-typing overflow-hidden whitespace-nowrap border-r-4 pr-1 text-center text-5xl font-bold  text-black">
+            <div className="flex flex-col">
+              <p className="md:animate-typing md:overflow-hidden md:whitespace-nowrap md:border-r-4 md:pr-1 text-center text-5xl font-bold  text-black">
                 para todos os homens."
               </p>
             </div>
@@ -113,7 +110,7 @@ export default function Sobre() {
           className="h-[519px] w-[1016px] object-cover"
         />
         {/* Sobre 4 */}
-        <p className="py-10 text-lg leading-[140%] text-gray-medium">
+        <p className="py-10 text-lg leading-[140%] text-gray-mediu  mx-5 xl:mx-0">
           Donec pulvinar est id neque sollicitudin consectetur. Nullam at metus
           dapibus, tempor arcu non, ultricies tellus. Integer egestas nulla vel
           ex mollis gravida. Aenean et rutrum ligula, a eleifend risus. Sed id
@@ -139,7 +136,7 @@ export default function Sobre() {
           erat.
         </p>
         {/* Sobre 4 */}
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-5  mx-5 xl:mx-0 pb-24">
           <Image
             src="/img/images/gallery-about-1.jpg"
             width={498}

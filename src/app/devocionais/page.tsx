@@ -15,13 +15,13 @@ export default function Devocionais() {
       <Menu />
 
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl py-24">
+      <div className="mx-auto max-w-screen-xl">
         {/* Título */}
         <Title
           title="Devocionais"
           subtitle="Tire um tempo para meditar na Palavra"
         />
-        <div className="flex gap-36">
+        <div className="flex gap-36 mx-5 xl:mx-0">
           {/* Coluna 1 */}
 
           <div>
@@ -59,7 +59,7 @@ export default function Devocionais() {
 
 
           {/* Coluna 2 */}
-          <div>
+          <div className="hidden xl:block">
             <Input
               id="search"
               icon={<MagnifyingGlass size={24} className="text-black" />}
