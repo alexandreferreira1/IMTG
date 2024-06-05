@@ -19,13 +19,13 @@ export default function Galeria2() {
 
         {/* */}
         <div className="flex flex-wrap gap-1">
-          <div className="overflow-hidden transition-all duration-700 hover:rounded-[4px] hover:duration-700 ">
+          <div className="overflow-hidden transition-all duration-1000 hover:rounded-[4px] hover:duration-100 ">
             <Image
               src="/img/images/Rectangle 15.png"
               width={422}
               height={280}
               alt="Image Example"
-              className="h-[280px] w-[422px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+              className="h-[280px] w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
             />
           </div>
         </div>

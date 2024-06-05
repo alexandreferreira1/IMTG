@@ -4,6 +4,9 @@ import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { ButtonArrow } from "@/components/ButtonArrow";
+import { Input } from "@/components/Input";
+import Link from "next/link";
+import Pagination from "@/components/Pagination";
 
 export default function Devocionais() {
   return (
@@ -20,7 +23,9 @@ export default function Devocionais() {
         />
         <div className="flex gap-36">
           {/* Coluna 1 */}
+
           <div>
+            <Link href="" className="group">
             <div className="flex max-w-[772px] flex-col items-start gap-3">
               <Image
                 src="/img/fachada-exemplo.jpg"
@@ -48,73 +53,48 @@ export default function Devocionais() {
               </p>
 
               <ButtonArrow />
-            </div>
+              </div>
+              </Link>
           </div>
+
 
           {/* Coluna 2 */}
           <div>
-            <div className="relative flex w-[368px] items-center gap-[170px] text-xl text-gray-medium transition-all before:absolute before:-bottom-[4px] before:h-[1px] before:w-[368px] before:bg-gray-regular before:transition-all before:duration-1000 before:content-['']   hover:text-black hover:duration-1000 after:content-[''] after:-bottom-[4px] after:h-[1px] after:w-0 hover:after:w-[368px] after:bg-black after:absolute after:transition-all after:duration-1000 after:ease-out">
-              {/* <span className="shrink-0">Pesquisar um tema</span> */}
-              <input type="text" placeholder="Pesquisar um tema" className="w-full pr-10 outline-0" />
-              <MagnifyingGlass size={24} className="absolute right-0" />
-            </div>
+            <Input
+              id="search"
+              icon={<MagnifyingGlass size={24} className="text-black" />}
+              name="search"
+              placeholder="Pesquisar um tema"
+              type="text"
+              iconPosition="right"
+            />
             <h3 className="pb-4 pt-10 text-lg font-bold text-black">
               Posts Recentes
             </h3>
-
-            <div className="flex gap-3 ">
-              <Image
-                src="/img/fachada-exemplo.jpg"
-                width={190}
-                height={141}
-                alt="Logotipo da IMTG"
-                className="h-[141px] w-[190px] object-cover"
-              />
-              <div className="flex max-w-40 flex-col  justify-center">
-                <h4 className="text-xs text-gray-medium">
-                  16 de Dezembro, 2024
-                </h4>
-                <h2 className="text-lg font-bold text-black">
-                  Novos convertidos sendo batizados em Dezembro
-                </h2>
+            <Link href="" className="group">
+              <div className="flex gap-3 ">
+                <Image
+                  src="/img/fachada-exemplo.jpg"
+                  width={190}
+                  height={141}
+                  alt="Logotipo da IMTG"
+                  className="h-[141px] w-[190px] object-cover"
+                />
+                <div className="flex max-w-40 flex-col  justify-center group-hover:underline decoration-black">
+                  <h4 className="text-xs text-gray-medium">
+                    16 de Dezembro, 2024
+                  </h4>
+                  <h2 className="text-lg font-bold text-black">
+                    Novos convertidos sendo batizados em Dezembro
+                  </h2>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
         {/* Paginação */}
-        <div className="mt-24 flex">
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] bg-red-regular font-medium text-white">
-            1
-          </button>
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] font-medium text-black">
-            2
-          </button>
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] font-medium text-black">
-            3
-          </button>
-
-          <button className=" mr-[10px] flex h-[30px] w-[30px] justify-center rounded-[4px] font-medium text-black">
-            ...
-          </button>
-
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] font-medium text-black">
-            4
-          </button>
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] font-medium text-black">
-            5
-          </button>
-          <button className="mr-[10px] h-[30px] w-[30px] rounded-[4px] font-medium text-black">
-            6
-          </button>
-          <Image
-            src="/img/arrow-right.svg"
-            width={30}
-            height={30}
-            alt=""
-            className="h-[28px] w-[28px] object-cover"
-          />
-        </div>
+        <Pagination />
       </div>
 
       {/* Footer */}

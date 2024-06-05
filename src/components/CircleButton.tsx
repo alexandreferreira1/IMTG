@@ -1,27 +1,17 @@
-import clsx from "clsx";
-import Image from "next/image";
-import React, { ReactNode } from "react";
+import { ShareFat } from "@phosphor-icons/react/dist/ssr";
 
-interface ButtonCircleStyle {
-  logo: string;
-  variation: "primary" | "secondary";
+interface CircleButtonProps {
+    icon: string;
 }
 
-export default function CircleButton({ logo, variation }: ButtonCircleStyle) {
-  return (
-    <button>
-      <div className="pl-3">
-        <Image
-          src={logo}
-          width={variation === "primary" ? 45 : 30}
-          height={variation === "primary" ? 45 : 30}
-          alt="logo facebook"
-          className={clsx("mx-auto", {
-            "h-[45px] w-[45px]": variation == "primary",
-            "h-[30px] w-[30px]": variation == "secondary",
-          })}
-        />
-      </div>
-    </button>
-  );
+export default function CircleButton({icon}:CircleButtonProps) {
+    return (
+        <button className="relative ml-auto flex w-fit items-center gap-2 group">
+            <span className="shrink-0 font-[400] group-hover:text-red-regular">Compartilhar</span>
+            <div className="border-[1px] p-[6px] rounded-full text-black group-hover:text-red-regular">
+                < ShareFat size={18} />
+            </div>
+        </button>
+
+    )
 }

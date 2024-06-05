@@ -38,7 +38,7 @@ export default function FaleConosco() {
                 id="name"
                 icon={<User size={24} className="text-black" />}
                 name="name"
-                placeholder="Digite seu nome"
+                placeholder="Nome"
                 type="text"
               />
 
@@ -48,6 +48,7 @@ export default function FaleConosco() {
                 name="email"
                 placeholder="E-mail"
                 type="email"
+                
               />
 
               <Input

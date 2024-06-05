@@ -3,7 +3,7 @@ import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { HandHeart, Church } from "@phosphor-icons/react/dist/ssr";
 
-export default function FaleConosco() {
+export default function Contribuicao() {
   return (
     <>
       {/* Menu */}
@@ -14,10 +14,10 @@ export default function FaleConosco() {
         {/* Pix */}
         <div className="flex items-center justify-center gap-32">
           <div className=" w-[600px]">
-            <h2 className="pb-6 text-4xl font-bold text-black">
+            <h2 className="pb-6 text-4xl font-extrabold text-black">
               FAÇA UMA CONTRIBUIÇÃO COM PIX ATRAVÉS DO QR CODE
             </h2>
-            <p className="pb-6 text-lg text-gray-medium">
+            <p className="pb-6 text-lg text-gray-regular">
               Donec ut ullamcorper quam. Vivamus sagittis, massa a accumsan
               eleifend, risus mauris consequat purus, quis egestas erat ante sit
               amet mauris.

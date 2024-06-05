@@ -145,28 +145,28 @@ export default function Sobre() {
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover"
+            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-2.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover"
+            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-3.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover"
+            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-4.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover"
+            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
 
           <button className="h-14 rounded-[4px] bg-red-regular px-7 text-white hover:bg-red-light ">

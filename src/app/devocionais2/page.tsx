@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
+import CircleButton from "@/components/CircleButton";
+
 
 export default function Devocionais2() {
   return (
@@ -11,11 +13,11 @@ export default function Devocionais2() {
         style={{ backgroundPositionY: "50%" }}
       >
         {/* Menu */}
-        <Menu />
+        <Menu transparent />
 
         <div className="mx-auto mt-[235px] max-w-[700px] text-center text-white leading-[107%]">
           <h1 className="font-bold text-7xl pb-4">Assim na terra como no céu</h1>
-          <p className="text-red-extra-light">
+          <p className="text-white font-thin">
             Publicado por{" "}
             <span className="font-medium">AGNALDO FERREIRA</span> • 27 de
             Maio, 2024
@@ -25,16 +27,7 @@ export default function Devocionais2() {
 
       {/* Main */}
       <div className="m-auto flex max-w-[760px] flex-col gap-8 pb-24 pt-16">
-        <button className="animate-fade-right animate-ease-in animate-fill-both relative ml-auto flex w-fit items-center gap-2  font-medium text-black transition-all hover:font-medium hover:duration-1000">
-          <span className="shrink-0">Compartilhar</span>
-          <Image
-            src="/img/icons/share.svg"
-            width={30}
-            height={30}
-            alt="Image Example"
-            className="h-[30px] w-[30px] object-cover"
-          />
-        </button>
+        <CircleButton icon="ShareFat"/>
 
         <p className="text-lg leading-[140%] text-gray-medium">
           Na terceira petição da oração do Senhor, Jesus nos instrui a orar para
