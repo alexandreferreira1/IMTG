@@ -10,7 +10,7 @@ export default function Galeria2() {
       <Menu />
 
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-screen-xl mb-24">
         {/* Título */}
         <Title
           title="Novos convertidos sendo batizados em Dezembro"
@@ -25,18 +25,7 @@ export default function Galeria2() {
               width={422}
               height={280}
               alt="Image Example"
-              className="h-[280px] w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
-            />
-          </div>
-
-          {/* fasdf */}
-          <div className="overflow-hidden transition-all duration-1000 hover:rounded-[4px] hover:duration-100 ">
-            <Image
-              src="/img/images/Rectangle 15.png"
-              width={422}
-              height={280}
-              alt="Image Example"
-              className="h-[280px] w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
+              className="md:h-[280px] md:w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
             />
           </div>
         </div>

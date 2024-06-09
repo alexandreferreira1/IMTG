@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
+import { Button } from "@/components/Button";
 
 export default function Sobre() {
   return (
@@ -23,7 +24,7 @@ export default function Sobre() {
             width={498}
             height={588}
             alt="Logotipo da IMTG"
-            className="h-[588px] w-[498px] object-cover"
+            className="xl:h-[588px] xl:w-[498px] object-cover mx-auto"
           />
 
           <div className="flex xl:h-[588px] xl:w-[480px] flex-col gap-5 items-center xl:items-start">
@@ -107,7 +108,7 @@ export default function Sobre() {
           width={1016}
           height={519}
           alt="Logotipo da IMTG"
-          className="h-[519px] w-[1016px] object-cover"
+          className="xl:h-[519px] xl:w-[1016px] object-cover"
         />
         {/* Sobre 4 */}
         <p className="py-10 text-lg leading-[140%] text-gray-mediu  mx-5 xl:mx-0">
@@ -142,33 +143,33 @@ export default function Sobre() {
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-2.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-3.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-4.jpg"
             width={498}
             height={332}
             alt="Logotipo da IMTG"
-            className="h-[332px] w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
 
-          <button className="h-14 rounded-[4px] bg-red-regular px-7 text-white hover:bg-red-light ">
-            VER MAIS FOTOS
-          </button>
+          <Button title="VER MAIS FOTOS" fullsize />
+            
+
         </div>
       </div>
 

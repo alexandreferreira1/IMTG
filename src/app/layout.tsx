@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <NextUIProvider>
-          {children}
+            {children}
         </NextUIProvider>
       </body>
     </html>

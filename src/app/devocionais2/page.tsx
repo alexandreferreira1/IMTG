@@ -9,7 +9,7 @@ export default function Devocionais2() {
     <>
       {/* Menu e Banner */}
       <div
-        className="relative h-[700px] bg-[url('/img/images/banner2.png')] bg-cover bg-no-repeat"
+        className="relative h-[700px] bg-[url('/img/images/banner2.png')] bg-cover bg-no-repeat bg-center"
         style={{ backgroundPositionY: "50%" }}
       >
         {/* Menu */}
@@ -27,7 +27,7 @@ export default function Devocionais2() {
 
       {/* Main */}
       <div className="m-auto flex max-w-[760px] flex-col gap-8 pb-24 pt-16 mx-5 xl:mx-0">
-        <CircleButton icon="ShareFat"/>
+        <CircleButton icon="ShareFat" />
 
         <p className="text-lg leading-[140%] text-gray-medium">
           Na terceira petição da oração do Senhor, Jesus nos instrui a orar para
@@ -99,19 +99,21 @@ export default function Devocionais2() {
           <span className="font-semibold text-black">Romanos 8:28</span>).
         </p>
 
-        <div className="relative mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">
-          <Image
-            src="/img/icons/applause.svg"
-            width={40}
-            height={40}
-            alt="Image Example"
-            className="h-[40px] w-[40px] object-cover"
-          />
-          {/* Contador */}
-          <div className="absolute left-[224px] top-[55px] h-[20px] w-[20px] rounded-full bg-red-regular"></div>
-          <p className="absolute left-[226px] top-[58px] text-[10px] font-medium text-white">
+        <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">
+          <div className="w-[54px]  relative">
+            <Image
+              src="/img/icons/applause.svg"
+              width={50}
+              height={50}
+              alt="Image Example"
+              className="h-[50px] w-[50px] object-cover"
+            />
+            {/* Contador */}
+            <div className="absolute right-[0px] bottom-[0px] h-[24px] w-[24px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
+          </div>
+          {/* <p className="absolute left-[226px] top-[58px] text-[10px] ">
             +10
-          </p>
+          </p> */}
           <div>
             <p className="font-semibold text-black">Gostou do conteúdo?</p>
             <p className="text-gray-medium">

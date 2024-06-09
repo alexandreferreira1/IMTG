@@ -10,7 +10,7 @@ export default function Home() {
     <>
       {/* Menu e Banner */}
       <div
-        className="relative h-[400px] xl:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-no-repeat"
+        className="relative h-[400px] xl:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-no-repeat bg-center"
         style={{ backgroundPositionY: "50%" }}
       >
         {/* Menu */}
@@ -26,7 +26,7 @@ export default function Home() {
       <div>
         {/* Sobre */}
         <div className="mx-auto flex flex-col xl:flex-row max-w-screen-xl items-center gap-[84px] md:py-[72px] py-0">
-          <div className="relative shrink-0">
+          <div className="relative shrink-0 hidden md:block">
             <Image
               src="/img/fachada-exemplo.jpg"
               width={550}
@@ -48,7 +48,7 @@ export default function Home() {
               width={82}
               height={114}
               alt="Logotipo da IMTG"
-              className="h-[114px] w-[82px]"
+              className="h-[114px] w-[82px] hidden xl:block"
             />
             <div>
               <h3 className="font-medium text-gray-medium">
