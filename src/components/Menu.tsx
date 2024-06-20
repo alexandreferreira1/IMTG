@@ -4,14 +4,16 @@ import { Button } from "./Button";
 import Link from "next/link";
 import clsx from "clsx";
 import { NavbarMobile } from "./NavbarMobile";
+import { usePathname } from "next/navigation";
+import Devocionais from "@/app/devocionais/page";
 
-interface MenuProps {
-  transparent?: boolean;
-}
 
-export function Menu({transparent = false}: MenuProps) {
+export function Menu() {
+  const pathName = usePathname()
+  const pathNameParts = pathName.split('/')
+  console.log(pathNameParts)
   return (
-    <div className={clsx("bg-black-dark px-4", {"bg-black-dark/70":transparent})}>
+    <div className={clsx("bg-black-dark px-4 z-10", { "bg-black-dark/70": pathName === '/' || (pathNameParts.length === 3 && pathNameParts[1] === "devocionais") })}>
       <div className="mx-auto flex h-20 max-w-screen-xl items-center justify-between">
         <div className="flex gap-8">
           {/* Logo */}

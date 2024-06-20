@@ -33,9 +33,6 @@ export default async function Devocionais() {
   
   return (
     <>
-      {/* Menu */}
-      <Menu />
-
       {/* Main */}
       <div className="mx-auto max-w-screen-xl">
         {/* Título */}
@@ -129,9 +126,6 @@ export default async function Devocionais() {
         {/* Paginação */}
         <Pagination />
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Menu } from "@/components/Menu";
-import { Footer } from "@/components/Footer";
 import CircleButton from "@/components/CircleButton";
 
 
@@ -12,8 +10,6 @@ export default function Devocionais2() {
         className="relative h-[700px] bg-[url('/img/images/banner2.png')] bg-cover bg-no-repeat bg-center"
         style={{ backgroundPositionY: "50%" }}
       >
-        {/* Menu */}
-        <Menu transparent />
 
         <div className="mx-auto mt-[235px] max-w-[700px] text-center text-white leading-[107%]">
           <h1 className="font-bold text-7xl pb-4">Assim na terra como no céu</h1>
@@ -122,9 +118,6 @@ export default function Devocionais2() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

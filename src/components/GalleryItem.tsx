@@ -12,7 +12,7 @@ interface GalleryItemProps {
 export function GalleryItem({ id, date, quantity, title, imgUrl }: GalleryItemProps) {
     return (
 
-        <Link href="" className="group">
+        <Link href={`/galeria/${id}`} className="group">
             <div className="max-w-[370px]">
                 <div className="overflow-hidden bg-black-dark transition-all duration-700 rounded-[4px] hover:duration-700 ">
                     <Image

@@ -15,5 +15,9 @@ export interface Gallery {
 }
 
 export interface GalleryList {
-  galleries: Gallery[]
+  galleries: Gallery[];
+}
+
+export interface GalleryDetails {
+  galleries: Omit<Gallery, "thumbnail">[]
 }

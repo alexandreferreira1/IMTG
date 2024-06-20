@@ -13,8 +13,7 @@ export default function Home() {
         className="relative h-[400px] xl:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-no-repeat bg-center"
         style={{ backgroundPositionY: "50%" }}
       >
-        {/* Menu */}
-        <Menu transparent />
+
 
         <div className="mx-auto px-4 xl:px-0 mt-[200px] xl:mt-[440px] max-w-screen-xl text-center text-3xl  xl:text-6xl font-bold text-white">
           <p >Seja bem vindo!</p>
@@ -137,9 +136,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <Footer />
       </div>
     </>
   );

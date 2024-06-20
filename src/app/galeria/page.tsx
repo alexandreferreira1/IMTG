@@ -13,9 +13,6 @@ export default async function Galeria() {
   
   return (
     <>
-      {/* Menu */}
-      <Menu />
-
       {/* Main */}
       <div className="mx-auto max-w-screen-xl">
         {/* Título */}
@@ -59,9 +56,6 @@ export default async function Galeria() {
         {/* Paginação */}
         <Pagination />
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
