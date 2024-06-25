@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
+import {Providers} from "./providers";
 
 const font = Kumbh_Sans({
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -23,15 +24,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body className={font.className}>
-        <NextUIProvider>
-          <div className="z-0 relative">
+        <Providers>
+          <div>
             <Menu />
             {children}
             <Footer />
           </div>
-        </NextUIProvider>
+        </Providers>
       </body>
     </html>
   );

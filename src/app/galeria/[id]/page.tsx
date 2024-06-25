@@ -19,20 +19,12 @@ export default async function GalleryDetails({ params }: GalleryDetailsProps) {
   const query = GetGalleryByIdQuery(params.id)
   const gallery = await makeRequest(query) as GalleryDetailsType
 
-  if (gallery.galleries.length === 0) {
+  if (!gallery) {
     notFound()
   }
-
   console.log(gallery)
 
-
-
-
   return (
-    <>
-
-<GalleryPhotos />
-
-    </>
+    <GalleryPhotos gallery={gallery}/>
   );
 }

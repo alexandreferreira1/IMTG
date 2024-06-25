@@ -1,84 +1,49 @@
-import React from "react";
+import { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
+import { Link } from "@nextui-org/link";
+import { List, X } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 
 export function NavbarMobile() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
+        {title: 'Início', href: '/'},
+        {title: 'Sobre', href: '/sobre'},
+        {title: 'Devocionais', href: '/devocionais'},
+        {title: 'Galeria', href: '/galeria'},
+        {title: 'Fale Conosco', href: '/fale-conosco'},
+        {title: 'Faça sua Contribuição', href: '/faca-sua-contribuicao'}   
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="lg:hidden bg-black-dark text-white">
             <NavbarContent>
                 <NavbarMenuToggle
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="sm:hidden"
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}                    
+                    icon={isMenuOpen ? <X className="text-white w-[30px] h-[30px]"/> : <List className="text-white w-[30px] h-[30px]"/>}
                 />
                 <NavbarBrand>
-                    <p className="font-bold text-inherit">ACME</p>
+                    <Image
+                        src="/img/logoietg.png"
+                        width={88}
+                        height={62}
+                        alt="Logotipo da IMTG"
+                        quality={100}
+                        className="h-[62px] w-11 ml-auto"
+                    />
                 </NavbarBrand>
-            </NavbarContent>
-
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                    {/* <Link color="foreground" href="#">
-          
-          </Link> */}
-                    Features
-                </NavbarItem>
-
-                <NavbarItem isActive>
-                    {/* <Link href="#" aria-current="page">
-                        
-                    </Link> */}
-                    Customers
-                </NavbarItem>
-                <NavbarItem>
-                    {/* <Link color="foreground" href="#">
-                       
-                    </Link> */}
-                    Integrations
-                </NavbarItem>
-            </NavbarContent>
-            <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                    {/* <Link href="#"></Link> */}
-                    Login
-                </NavbarItem>
-                <NavbarItem>
-                    {/* <Button as={Link} color="primary" href="#" variant="flat">
-                        
-                    </Button> */}
-                    Sign Up
-                </NavbarItem>
-            </NavbarContent>
-            <NavbarMenu>
+            </NavbarContent>          
+            <NavbarMenu className="bg-black-dark text-white">
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        {/* <Link
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            className="w-full"
-                            href="#"
-                            size="lg"
-                        >
-                           
-                        </Link> */}
-                         {item}
+                    <NavbarMenuItem key={`${item}-${index}`}>   
+                        <Link className="w-full !text-white h-10 bg-black flex hover:text-white active:text-white items-center justify-center hover:bg-red-extra-light transition-all duration-50 rounded-md" href={item.href}>                            
+                            {item.title}
+                        </Link>                                       
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
         </Navbar>
     );
 }
+

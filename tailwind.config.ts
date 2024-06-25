@@ -56,6 +56,7 @@ const config: Config = {
       yellow: "#FFAD29",
     },
   },
-  plugins: [nextui()],
+  darkMode: "class",
+  plugins: [nextui()]
 };
 export default config;

@@ -6,9 +6,6 @@ import { HandHeart, Church } from "@phosphor-icons/react/dist/ssr";
 export default function Contribuicao() {
   return (
     <>
-      {/* Menu */}
-      <Menu />
-
       {/* Main */}
       <div className="mx-auto max-w-screen-xl py-10 md:py-24">
         {/* Pix */}
@@ -92,9 +89,6 @@ export default function Contribuicao() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

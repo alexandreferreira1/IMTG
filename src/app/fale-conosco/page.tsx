@@ -18,9 +18,6 @@ import { Button } from "@/components/Button";
 export default function FaleConosco() {
   return (
     <>
-      {/* Menu */}
-      <Menu />
-
       {/* Main */}
       <div className="mx-auto max-w-screen-xl">
         {/* Título */}
@@ -118,9 +115,6 @@ export default function FaleConosco() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

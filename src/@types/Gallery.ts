@@ -19,5 +19,5 @@ export interface GalleryList {
 }
 
 export interface GalleryDetails {
-  galleries: Omit<Gallery, "thumbnail">[]
+  gallery: Omit<Gallery, "thumbnail">
 }

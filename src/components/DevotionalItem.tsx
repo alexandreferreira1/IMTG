@@ -3,17 +3,17 @@ import Link from "next/link";
 import { ButtonArrow } from "./ButtonArrow";
 
 interface DevotionalItemProps {
-    id:string,
+    id: string,
     title: string,
     author: string,
     date: string,
     resume: string,
-    imgUrl?: string,
+    imgUrl: string,
 }
 
-export function DevotionalItem({id, author, date, imgUrl, resume, title}:DevotionalItemProps) {
+export function DevotionalItem({ id, author, date, imgUrl, resume, title }: DevotionalItemProps) {
     return (
-        <Link href="" className="group">
+        <Link href={`/devocionais/${id}`} className="group">
             <div className="flex max-w-[772px] flex-col items-start gap-3 mb-24">
                 <Image
                     src={imgUrl}
@@ -24,14 +24,14 @@ export function DevotionalItem({id, author, date, imgUrl, resume, title}:Devotio
                 />
                 <div>
                     <h2 className="pb-[6px] text-4xl font-bold text-black">
-                       {title}
+                        {title}
                     </h2>
                     <h4 className="text-sm text-gray-regular">
                         Publicado por{" "}
                         <span className="font-medium">{author}</span> • {date}
                     </h4>
                 </div>
-                <p  className="text-lg text-gray-medium">
+                <p className="text-lg text-gray-medium">
                     {resume}
                 </p>
 

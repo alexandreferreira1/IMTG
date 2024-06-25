@@ -5,36 +5,56 @@ import { Title } from "./Title"
 import { ImageGallery } from "./ImageGallery"
 import { useState } from "react"
 
-export function GalleryPhotos() {
+import { GalleryDetails as GalleryDetailsType } from "@/@types/Gallery";
+
+interface GalleryPhotosProps {
+    gallery: GalleryDetailsType
+}
+
+export function GalleryPhotos({ gallery }: GalleryPhotosProps) {
 
     const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+    const [indexOpen, setIndexOpen] = useState(0)
+
+    const handleOpenGallery = (index: number) => {
+        setIndexOpen(index)
+        setIsGalleryOpen(true)
+    }
+
+    const images = gallery.gallery.photos.map(image => {
+        return {
+            original: image.url,
+            thumbnail: image.url
+        }
+    })
+    
 
     return (
         <>
             {/* Main */}
-            {isGalleryOpen && <ImageGallery />}
+            {isGalleryOpen && <ImageGallery indexOpen={indexOpen} images={images} setIsGalleryOpen={setIsGalleryOpen} />}
 
             <div className="mx-auto max-w-screen-xl mb-24">
                 {/* Título */}
                 <Title
-                    title="Novos convertidos sendo batizados em Dezembro"
-                    subtitle="Confira nossos eventos"
+                    title={gallery.gallery.title}
+                    subtitle={`${gallery.gallery.date} • ${gallery.gallery.photos.length.toString().padStart(2, '0')} foto${gallery.gallery.photos.length > 1 && 's'}`}
                 />
-
-
 
                 {/* */}
                 <div className="flex flex-wrap gap-1 mx-5 xl:mx-0 justify-center xl:justify-start">
-                    <div className="overflow-hidden transition-all duration-1000 hover:rounded-[4px] hover:duration-100 ">
-                        <Image
-                            onClick={() => setIsGalleryOpen(true)}
-                            src="/img/images/Rectangle 15.png"
-                            width={422}
-                            height={280}
-                            alt="Image Example"
-                            className="md:h-[280px] md:w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
-                        />
-                    </div>
+                    {gallery.gallery.photos.map((item, index) =>
+                        <div className="overflow-hidden transition-all duration-1000 hover:rounded-[4px] hover:duration-100 " key={item.id}>
+                            <Image
+                                onClick={() => handleOpenGallery(index)}
+                                src={item.url}
+                                width={422}
+                                height={280}
+                                alt="Image Example"
+                                className="md:h-[280px] md:w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         </>

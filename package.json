@@ -10,10 +10,12 @@
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts"
   },
   "dependencies": {
-    "@nextui-org/navbar": "^2.0.32",
+    "@nextui-org/link": "^2.0.32",
+    "@nextui-org/navbar": "^2.0.33",
     "@nextui-org/react": "^2.4.1",
     "@phosphor-icons/react": "^2.1.5-alpha.3",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.2.10",
     "graphql-request": "^7.0.1",

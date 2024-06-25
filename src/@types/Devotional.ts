@@ -11,6 +11,14 @@ export interface Devotional {
   resume: string;
 }
 
+export interface DevotionalDetails {
+  devotional: Omit<Devotional, "resume"> & {
+    content: {
+      html: string;
+    }
+  }
+}
+
 export interface DevotionalList {
   devotionals: Devotional[];
 }

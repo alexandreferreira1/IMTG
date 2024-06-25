@@ -8,9 +8,6 @@ import { Button } from "@/components/Button";
 export default function Sobre() {
   return (
     <>
-      {/* Menu */}
-      <Menu />
-
       {/* Main */}
       <div className="mx-auto max-w-[1016px] ">
         {/* Título */}
@@ -167,14 +164,11 @@ export default function Sobre() {
             className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
 
-          <Button title="VER MAIS FOTOS" fullsize />
+          <Button title="VER MAIS FOTOS" />
             
 
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }

@@ -40,7 +40,7 @@ export default async function Devocionais() {
           title="Devocionais"
           subtitle="Tire um tempo para meditar na Palavra"
         />
-        <div className="flex gap-36 mx-5 xl:mx-0">
+        <div className="flex gap-36 mx-5 xl:mx-0 justify-center">
           {/* Coluna 1 */}
 
           <div>

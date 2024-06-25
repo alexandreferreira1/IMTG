@@ -1,5 +1,5 @@
 export const GetGalleryByIdQuery = (id: string) => `query GetGalleryById {
-    galleries(where: {id: "${id}"}) {
+    gallery(where: {id: "${id}"}) {
       title
       date
       id

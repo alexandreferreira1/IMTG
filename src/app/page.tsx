@@ -8,15 +8,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      {/* Menu e Banner */}
+      {/* Banner */}
       <div
-        className="relative h-[400px] xl:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-no-repeat bg-center"
-        style={{ backgroundPositionY: "50%" }}
+        className="mt-[-80px] h-[400px] lg:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-center bg-no-repeat"
+        // style={{ backgroundPositionY: "50%" }}
       >
-
-
-        <div className="mx-auto px-4 xl:px-0 mt-[200px] xl:mt-[440px] max-w-screen-xl text-center text-3xl  xl:text-6xl font-bold text-white">
-          <p >Seja bem vindo!</p>
+        <div className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white w-full h-full flex flex-col justify-end items-center pb-11">
+          <p>Seja bem vindo!</p>
           <p>Um lugar para família</p>
         </div>
       </div>
@@ -24,36 +22,36 @@ export default function Home() {
       {/* Main */}
       <div>
         {/* Sobre */}
-        <div className="mx-auto flex flex-col xl:flex-row max-w-screen-xl items-center gap-[84px] md:py-[72px] py-0">
-          <div className="relative shrink-0 hidden md:block">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center gap-8 xl:gap-[84px]  py-10 xl:py-20 xl:flex-row">
+          <div className="relative hidden shrink-0 md:block">
             <Image
               src="/img/fachada-exemplo.jpg"
               width={550}
               height={680}
               alt="Exemple Image"
-              className="xl:h-[680px] xl:w-[550px] object-cover"
+              className="object-cover xl:h-[680px] xl:w-[550px]"
             />
 
-            <div className="xl:absolute bottom-0 w-full right-[-190px]  flex h-[200px] xl:w-[403px] items-center justify-center bg-[#324049] px-10">
-              <p className="mx-auto w-full shrink-0 text-center xl:text-left text-3xl xl:text-[32px] font-bold leading-[125%] text-white">
+            <div className="bottom-0 right-[-190px] xl:flex h-[200px]  w-full items-center justify-center bg-[#324049] px-10 xl:absolute xl:w-[403px] hidden">
+              <p className="mx-auto w-full shrink-0 text-center text-3xl font-bold leading-[125%] text-white xl:text-left xl:text-[32px]">
                 “Porque a graça de Deus se manisfestou”
               </p>
             </div>
           </div>
 
-          <div className="flex h-[435px] flex-col gap-6 px-10 xl:pl-[200px]">
+          <div className="flex xl:h-[435px] flex-col gap-6 px-10 xl:pl-[200px]">
             <Image
               src="/img/logoietg.png"
               width={82}
               height={114}
               alt="Logotipo da IMTG"
-              className="h-[114px] w-[82px] hidden xl:block"
+              className="hidden h-[114px] w-[82px] md:block"
             />
             <div>
               <h3 className="font-medium text-gray-medium">
                 NOSSA HISTÓRIA E VALORES
               </h3>
-              <h2 className="mt-2 xl:text-5xl text-3xl font-bold leading-[125%] text-black">
+              <h2 className="mt-2 text-3xl font-bold leading-[125%] text-black xl:text-5xl">
                 Nossa igreja começou há 7 anos atrás
               </h2>
             </div>
@@ -70,19 +68,19 @@ export default function Home() {
         </div>
 
         {/* Faça uma visita! */}
-        <div className="bg-gray-thin mt-28 xl:mt-0 pt-10 xl:pt-0">
+        <div className=" bg-gray-thin pt-10 xl:pt-0">
           {/* Nossa Localização */}
-          <div className="mx-auto flex flex-col xl:flex-row max-w-screen-xl justify-between items-center">
+          <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-between xl:flex-row">
             <div>
               <div className="text-center xl:text-left">
                 <p className="text-gray-medium">NOSSA LOCALIZAÇÃO</p>
-                <p className="pt-1 text-3xl xl:text-5xl font-bold text-black">
+                <p className="pt-1 text-3xl font-bold text-black xl:text-5xl">
                   Faça uma visita!
                 </p>
               </div>
 
               {/* Horário e Endereço */}
-              <div className="flex flex-col md:flex-row items-center xl:items-start gap-16 pt-12 text-center">
+              <div className="flex flex-col items-center gap-16 pt-12 text-center md:flex-row xl:items-start">
                 <div>
                   <Image
                     src="/img/icons/churchlogo1.svg"
@@ -123,7 +121,7 @@ export default function Home() {
               </div>
             </div>
             {/* Mapa */}
-            <div className="xl:w-[655px] w-full pt-10 xl:pt-0">
+            <div className="w-full pt-10 xl:w-[655px] xl:pt-0">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14955.70383589071!2d-54.6461527!3d-20.4271279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e7a9c82c3cf1%3A0x50cb1fc890a959c7!2sIgreja%20Ministerial%20Tempo%20da%20Gra%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1714534417159!5m2!1spt-BR!2sbr"
                 // width="655"
