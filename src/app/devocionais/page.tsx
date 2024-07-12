@@ -1,14 +1,16 @@
 import Image from "next/image";
-import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-import { Menu } from "@/components/Menu";
-import { Footer } from "@/components/Footer";
+
+// import { Menu } from "@/components/Menu";
+// import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
-import { Input } from "@/components/Input";
+
 import Link from "next/link";
 import Pagination from "@/components/Pagination";
 import { DevotionalItem } from "@/components/DevotionalItem";
 import { makeRequest } from "@/utils/hygraph-client";
 import { GetDevotionalsQuery } from "@/graphql/queries/get-devotionals";
+import { useForm } from "react-hook-form";
+import InputSearch from "@/components/InputSearch";
 
 
 export interface Devotional {
@@ -29,8 +31,11 @@ export interface DevotionalList {
 }
 
 export default async function Devocionais() {
-  const devotionals = await makeRequest(GetDevotionalsQuery) as DevotionalList
+  const devotionals = await makeRequest(GetDevotionalsQuery) as DevotionalList;
+
+
   
+
   return (
     <>
       {/* Main */}
@@ -90,14 +95,8 @@ export default async function Devocionais() {
 
           {/* Coluna 2 */}
           <div className="hidden xl:block">
-            <Input
-              id="search"
-              icon={<MagnifyingGlass size={24} className="text-black" />}
-              name="search"
-              placeholder="Pesquisar um tema"
-              type="text"
-              iconPosition="right"
-            />
+
+            <InputSearch />
             <h3 className="pb-4 pt-10 text-lg font-bold text-black">
               Posts Mais Acessados
             </h3>

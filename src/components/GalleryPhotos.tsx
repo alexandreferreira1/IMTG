@@ -4,8 +4,9 @@ import Image from "next/image"
 import { Title } from "./Title"
 import { ImageGallery } from "./ImageGallery"
 import { useState } from "react"
-
 import { GalleryDetails as GalleryDetailsType } from "@/@types/Gallery";
+import { format, parseISO } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 interface GalleryPhotosProps {
     gallery: GalleryDetailsType
@@ -27,7 +28,14 @@ export function GalleryPhotos({ gallery }: GalleryPhotosProps) {
             thumbnail: image.url
         }
     })
-    
+
+    const date = new Date(parseISO(gallery.gallery.date))
+    const month = format(date, "MMMM", { locale: ptBR })
+
+    const capitalized =
+        month.charAt(0).toUpperCase()
+        + month.slice(1)
+
 
     return (
         <>
@@ -38,7 +46,12 @@ export function GalleryPhotos({ gallery }: GalleryPhotosProps) {
                 {/* Título */}
                 <Title
                     title={gallery.gallery.title}
-                    subtitle={`${gallery.gallery.date} • ${gallery.gallery.photos.length.toString().padStart(2, '0')} foto${gallery.gallery.photos.length > 1 && 's'}`}
+                    subtitle={`
+                    ${format(date, "dd 'de' ", { locale: ptBR })} 
+                    ${capitalized}
+                    ${format(date, ", yyyy", { locale: ptBR })}
+                    
+                    • ${gallery.gallery.photos.length.toString().padStart(2, '0')} foto${gallery.gallery.photos.length > 1 && 's'}`}
                 />
 
                 {/* */}

@@ -1,11 +1,16 @@
+'use client'
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { Button } from "@/components/Button";
+import useWindowDimentions from "@/hooks/useWindowDimensions";
 
 export default function Sobre() {
+  const { width } = useWindowDimentions()
+
+
   return (
     <>
       {/* Main */}
@@ -164,8 +169,8 @@ export default function Sobre() {
             className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
 
-          <Button title="VER MAIS FOTOS" />
-            
+          <Button title="VER MAIS FOTOS" fullsize={width < 1280} />
+
 
         </div>
       </div>

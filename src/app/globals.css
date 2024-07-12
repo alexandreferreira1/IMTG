@@ -25,7 +25,7 @@
 @layer base {
   html {
     @apply scroll-smooth antialiased;
-  } 
+  }
 }
 
 /* RESET ============================== */
@@ -46,4 +46,44 @@ a {
 img {
   width: 100%;
   height: auto;
+}
+
+/* HYGRAPH */
+.hygraph-text h3 {
+  color: #384953;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.hygraph-text p {
+  color: #8b99a1;
+}
+
+.hygraph-text img {
+  padding: 2rem 0;
+}
+
+.hygraph-text strong {
+  color: #384953;
+}
+
+.hygraph-text blockquote {
+  background-color: #f0f0f0;
+  border-left: 2px solid #b12322;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  padding-left: 2rem;
+
+  font-size: 1rem;
+  color: #384953;
+  line-height: 140%;
+}
+
+.hygraph-text blockquote::before {
+  content: url(../../public/img/icons/quote.svg) "\A";
+  white-space: pre-wrap;
+
+  color: #b12322;
+  width: 1.5rem;
+  height: 1.125rem;
 }

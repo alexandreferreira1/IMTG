@@ -10,12 +10,12 @@ export default function Home() {
     <>
       {/* Banner */}
       <div
-        className="mt-[-80px] h-[400px] lg:h-[700px] bg-[url('/img/images/banner-home.png')] bg-cover bg-center bg-no-repeat"
+        className="mt-[-80px] h-[400px] lg:h-[700px] bg-[url('/img/images/banner-home1.png')] bg-cover bg-center bg-no-repeat"
         // style={{ backgroundPositionY: "50%" }}
       >
-        <div className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white w-full h-full flex flex-col justify-end items-center pb-11">
-          <p>Seja bem vindo!</p>
-          <p>Um lugar para família</p>
+        <div className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white w-full h-full flex flex-col justify-end items-center pb-11 bg-[#0c222c]/70">
+          <p className="drop-shadow-3xl">Seja bem vindo!</p>
+          <p className="drop-shadow-3xl">Um lugar para família</p>
         </div>
       </div>
 

@@ -22,7 +22,6 @@ export default async function GalleryDetails({ params }: GalleryDetailsProps) {
   if (!gallery) {
     notFound()
   }
-  console.log(gallery)
 
   return (
     <GalleryPhotos gallery={gallery}/>

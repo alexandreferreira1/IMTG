@@ -18,6 +18,9 @@ const config: Config = {
       boxShadow: {
         '3xl': '0px 4px 15px 0px rgba(0,0,0,0.20)'
       },
+      dropShadow: {
+        '3xl': '0 5px 5px rgba(0, 0, 0, 0.5)'
+      },
       keyframes: {
         typing: {
           '0%': {

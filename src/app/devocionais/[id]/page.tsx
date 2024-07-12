@@ -24,9 +24,6 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
 
   const date = new Date(parseISO(devotional.devotional.date))
 
-
-
-
   return (
     <>
       {/* Menu e Banner */}
@@ -35,9 +32,9 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
         className={`mt-[-80px] h-[400px] lg:h-[700px] bg-cover bg-center bg-no-repeat`}
       >
 
-        <div className="w-full h-full flex flex-col justify-end pb-[140px] items-center text-center text-white leading-[107%]">
-          <h1 className="font-bold text-5xl lg:text-7xl pb-4 lg:w-[530px]">{devotional.devotional.title}</h1>
-          <p className="text-white font-thin">
+        <div className="w-full h-full flex flex-col justify-end pb-[140px] items-center text-center text-white leading-[107%] bg-[#0c222c]/70">
+          <h1 className="font-bold text-5xl lg:text-7xl pb-4 lg:w-[530px] drop-shadow-3xl">{devotional.devotional.title}</h1>
+          <p className="text-white font-thin drop-shadow-3xl">
             Publicado por{" "}
             <span className="font-medium text-xs lg:text-base">{devotional.devotional.createdBy.name}</span> • {" "}
             {/* {devotional.devotional.date} */}
@@ -63,7 +60,7 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
               className="h-[50px] w-[50px] object-cover"
             />
             {/* Contador */}
-            <div className="absolute right-[0px] bottom-[0px] h-[22px] w-[22px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
+            <div className="absolute right-[-3px] bottom-[0px] h-[22px] w-[22px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
           </div>
           {/* <p className="absolute left-[226px] top-[58px] text-[10px] ">
             +10

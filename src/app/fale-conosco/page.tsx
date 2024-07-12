@@ -1,6 +1,5 @@
+'use client'
 import Image from "next/image";
-import { Menu } from "@/components/Menu";
-import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import {
   User,
@@ -12,10 +11,59 @@ import {
   Envelope,
 } from "@phosphor-icons/react/dist/ssr";
 import { Input } from "@/components/Input";
-import { TextArea } from "@/components/TextArea";
 import { Button } from "@/components/Button";
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import * as yup from 'yup';
+import { TextArea } from "@/components/TextArea";
+import axios from 'axios'
+interface FormFaleConoscoProps {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+const formContactSchema = yup.object({
+  name: yup
+    .string()
+    .required('Preencha esse campo, por favor.'),
+  email: yup
+    .string()
+    .email('Digite um e-mail válido.')
+    .required('Preencha esse campo, por favor.'),
+  subject: yup
+    .string()
+    .required('Preencha esse campo, por favor.'),
+  message: yup
+    .string()
+    .required('Preencha esse campo, por favor.')
+    .min(10, 'Digite pelo menos 10 caracteres'),
+});
+
 
 export default function FaleConosco() {
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors, isSubmitting },
+  } = useForm<FormFaleConoscoProps>({
+    resolver: yupResolver(formContactSchema),    
+  });
+
+  const onSubmit: SubmitHandler<FormFaleConoscoProps> = async ({ name, email, subject, message }) => {
+    const response = await axios.post("/api/contact", {
+      name,
+      email,
+      subject,
+      message,
+    });
+
+    console.log(response) 
+  }
+
   return (
     <>
       {/* Main */}
@@ -29,41 +77,48 @@ export default function FaleConosco() {
 
         {/* Formulário */}
 
-          <form className="mx-auto flex w-full max-w-[656px] flex-col gap-8 px-5">
-              <Input
-                id="name"
-                icon={<User size={24} className="text-black" />}
-                name="name"
-                placeholder="Nome"
-                type="text"
-              />
+        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto flex w-full max-w-[656px] flex-col gap-8 px-5">
+          <Input
+            id="name"
+            control={control}
+            icon={<User size={24} className="text-black" />}
+            name="name"
+            placeholder="Nome"
+            type="text"
+            error={errors.name?.message}
+          />
 
-              <Input
-                id="email"
-                icon={<EnvelopeSimple size={24} className="text-black" />}
-                name="email"
-                placeholder="E-mail"
-                type="email"
-                
-              />
+          <Input
+            id="email"
+            control={control}
+            icon={<EnvelopeSimple size={24} className="text-black" />}
+            name="email"
+            placeholder="E-mail"
+            type="email"
+            error={errors.email?.message}
+          />
 
-              <Input
-                id="subject"
-                icon={<ChatText size={24} className="text-black" />}
-                name="subject"
-                placeholder="Assunto"
-                type="text"
-              />
+          <Input
+            id="subject"
+            control={control}
+            icon={<ChatText size={24} className="text-black" />}
+            name="subject"
+            placeholder="Assunto"
+            type="text"
+            error={errors.subject?.message}
+          />
 
-              <TextArea
-                id="textarea"
-                icon={<ArticleNyTimes size={24} className="text-black" />}
-                name="message"
-                placeholder="Mensagem"
-              />
-          <Button title="Enviar" variation="secondary" /> 
+          <TextArea
+            id="message"
+            control={control}
+            icon={<ArticleNyTimes size={24} className="text-black" />}
+            name="message"
+            placeholder="Mensagem"
+            error={errors.message?.message}
+          />
+          <Button type="submit" title="Enviar" variation="secondary" disabled={isSubmitting} />
           {/* //TODO:colocar fullsize via js */}
-          </form>
+        </form>
       </div>
 
       {/* Contato */}

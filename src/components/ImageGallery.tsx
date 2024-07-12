@@ -1,7 +1,7 @@
 'use client'
 
 import { X } from "@phosphor-icons/react/dist/ssr";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 import ImageGalleryComponent from "react-image-gallery";
 interface Image {
     original: string;

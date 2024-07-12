@@ -1,29 +1,70 @@
-import { ReactNode } from "react";
+'use client'
 
-interface InputProps {
-  id: string;
-  icon?: ReactNode;
+import { InputHTMLAttributes, ReactNode } from 'react';
+
+import { clsx } from 'clsx';
+import { Controller } from 'react-hook-form';
+
+interface InputProps extends InputHTMLAttributes<HTMLElement> {
   name: string;
-  type: string;
-  placeholder: string;
+  control: any;
+  error?: string;
+  icon?: ReactNode;
   iconPosition?: 'left' | 'right'
 }
 
-export function Input({ id, icon, name, type, placeholder, iconPosition = "left" }: InputProps) {
+export function Input({
+  error,
+  name,
+  control,
+  icon,
+  iconPosition = 'left',
+  ...rest
+}: InputProps) {
+
   return (
-    <label
-      htmlFor={id}
-      className="relative flex w-full items-center gap-5 border-b border-gray-regular pb-3 after:absolute after:bottom-[-1px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-700 after:content-[''] hover:after:w-full has-[:focus]:after:w-full"
-    >
-      {icon && iconPosition == "left" && icon}
-      <input
-        id={id}
+    <>
+
+      <Controller
+        control={control}
         name={name}
-        type={type}
-        className="w-full text-xl text-black placeholder:text-gray-medium focus:outline-0 focus:placeholder:text-black"
-        placeholder={placeholder}
+        render={({ field }) => (
+          <label
+            htmlFor={rest.id}
+            className={clsx("relative flex w-full items-center gap-5 border-b border-gray-regular pb-3 after:absolute after:bottom-[-1px] after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-700 after:content-[''] hover:after:w-full has-[:focus]:after:w-full", {
+              'after:bg-red-extra-light border-red-regular': error
+            })
+            }
+          >
+            {icon && iconPosition == "left" && icon}
+            <input
+              id={rest.id}
+              value={field.value}
+              onChange={field.onChange}
+              className={clsx(
+                // {
+                //   'bg-red-extra-light/10 ring-2 ring-red-extra-light': error,
+                // },
+                'w-full text-xl text-black placeholder:text-gray-medium focus:outline-0 focus:placeholder:text-black',
+              )}
+              {...rest}
+            />
+
+            {icon && iconPosition == "right" && icon}
+          </label>
+        )}
       />
-      {icon && iconPosition == "right" && icon}
-    </label>
+
+
+      {
+        error && (
+          <div
+            className="flex items-center gap-[6px] text-red-extra-light"
+          >
+            {error}
+          </div>
+        )
+      }
+    </>
   );
-}
+};
