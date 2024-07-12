@@ -38,7 +38,7 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error) {
-    console.log(error);
-    return new NextResponse("Failed to send message.", { status: 500 });
+    console.log(error);    
+    return new NextResponse(JSON.stringify(error, null, 2), { status: 500 });
   }
 }
