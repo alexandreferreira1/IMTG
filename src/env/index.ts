@@ -2,14 +2,13 @@ import "dotenv/config";
 import { z } from "zod";
 
 const envSchema = z.object({
-  HYGRAPH_ENDPOINT: z.string(),
-  HYGRAPH_DEV_AUTH_TOKEN: z.string(),
-  HYGRAPH_PREVIEW_SECRET: z.string(),
-  EMAIL: z.string(),
-  PASSWORD: z.string(),
-  EMAIL_RECEIVER: z.string(),
+  NEXT_PUBLIC_HYGRAPH_ENDPOINT: z.string(),
+  NEXT_PUBLIC_HYGRAPH_DEV_AUTH_TOKEN: z.string(),
+  NEXT_PUBLIC_HYGRAPH_PREVIEW_SECRET: z.string(),
+  NEXT_PUBLIC_EMAIL: z.string(),
+  NEXT_PUBLIC_PASSWORD: z.string(),
+  NEXT_PUBLIC_EMAIL_RECEIVER: z.string(),
 });
-
 const _env = envSchema.safeParse(process.env);
 
 if (_env.success === false) {

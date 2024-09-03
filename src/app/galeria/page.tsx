@@ -54,7 +54,7 @@ export default async function Galeria() {
         </div>
 
         {/* Paginação */}
-        <Pagination />
+        {/* <Pagination /> */}
       </div>
     </>
   );

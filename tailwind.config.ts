@@ -50,7 +50,7 @@ const config: Config = {
       "red-light": "#C92223",
       "red-regular": "#B12322",
       white: "#FFFFFF",
-      "gray-thin": "#FBFBFB",
+      "gray-thin": "#F6F6F6",
       "gray-light": "#F0F0F0",
       "gray-regular": "#9CA8AF",
       "gray-medium": "#8B99A1",

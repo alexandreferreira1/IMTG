@@ -1,11 +1,16 @@
 'use client'
 
-import { useForm } from "react-hook-form";
+
 import { Input } from "./Input"
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 
-export default function InputSearch() {
-    const { control } = useForm();
+interface InputSearchProps {
+    control: any
+}
+
+
+export default function InputSearch({control}: InputSearchProps) {
+    
 
     return (
         <form>
@@ -13,7 +18,7 @@ export default function InputSearch() {
                 id="search"
                 control={control}
                 icon={<MagnifyingGlass size={24} className="text-black" />}
-                name="search"
+                name="searchTerm"
                 placeholder="Pesquisar um tema"
                 type="text"
                 iconPosition="right"

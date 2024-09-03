@@ -41,7 +41,7 @@ export default function Sobre() {
               <h3 className="font-medium text-gray-medium text-center xl:text-left">
                 UM POUCO DA NOSSA HISTÓRIA E DOS NOSSOS VALORES
               </h3>
-              <h2 className="mt-2 text-[46px] font-bold leading-[125%] text-black text-center xl:text-left">
+              <h2 className="mt-2 text-4xl md:text-[46px] font-bold leading-[125%] text-black text-center xl:text-left">
                 Nossa igreja começou há 7 anos atrás
               </h2>
             </div>
@@ -65,11 +65,11 @@ export default function Sobre() {
         {/* Sobre 2 */}
         <div className="py-10  mx-5 xl:mx-0">
           <div className="flex flex-col items-center mx-auto xl:w-[705px] py-10">
-            <p className=" text-center text-5xl font-bold  text-black">
+            <p className=" text-center text-4xl md:text-5xl font-bold  text-black">
               “Porque a graça de Deus se manifestou, trazendo salvação
             </p>
             <div className="flex flex-col">
-              <p className="md:animate-typing md:overflow-hidden md:whitespace-nowrap md:border-r-4 md:pr-1 text-center text-5xl font-bold  text-black">
+              <p className="md:animate-typing md:overflow-hidden md:whitespace-nowrap md:border-r-4 md:pr-1 text-center text-4xl md:text-5xl font-bold  text-black">
                 para todos os homens."
               </p>
             </div>
@@ -109,11 +109,11 @@ export default function Sobre() {
           src="/img/images/Rectangle 15.png"
           width={1016}
           height={519}
-          alt="Logotipo da IMTG"
-          className="xl:h-[519px] xl:w-[1016px] object-cover"
+          alt=""
+          className="xl:h-[519px] xl:w-[1016px] object-cover mx-auto px-5 xl:px-0"
         />
         {/* Sobre 4 */}
-        <p className="py-10 text-lg leading-[140%] text-gray-mediu  mx-5 xl:mx-0">
+        <p className="py-10 text-lg leading-[140%] mx-5 xl:mx-0 text-gray-medium">
           Donec pulvinar est id neque sollicitudin consectetur. Nullam at metus
           dapibus, tempor arcu non, ultricies tellus. Integer egestas nulla vel
           ex mollis gravida. Aenean et rutrum ligula, a eleifend risus. Sed id
@@ -139,37 +139,37 @@ export default function Sobre() {
           erat.
         </p>
         {/* Sobre 4 */}
-        <div className="flex flex-wrap gap-5  mx-5 xl:mx-0 pb-24">
+        <div className="flex flex-wrap gap-3 xl:gap-5 mx-5 xl:mx-0 pb-24">
           <Image
             src="/img/images/gallery-about-1.jpg"
             width={498}
             height={332}
-            alt="Logotipo da IMTG"
-            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            alt=""
+            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-2.jpg"
             width={498}
             height={332}
-            alt="Logotipo da IMTG"
-            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            alt=""
+            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-3.jpg"
             width={498}
             height={332}
-            alt="Logotipo da IMTG"
-            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            alt=""
+            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
           <Image
             src="/img/images/gallery-about-4.jpg"
             width={498}
             height={332}
-            alt="Logotipo da IMTG"
-            className="xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            alt=""
+            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
           />
 
-          <Button title="VER MAIS FOTOS" fullsize={width < 1280} />
+          <Button title="VER MAIS FOTOS" fullsize={width < 1024} />
 
 
         </div>

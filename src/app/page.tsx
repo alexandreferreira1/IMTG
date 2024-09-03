@@ -1,7 +1,4 @@
 import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { Menu } from "@/components/Menu";
-import { Footer } from "@/components/Footer";
 import { ButtonArrow } from "@/components/ButtonArrow";
 import Link from "next/link";
 

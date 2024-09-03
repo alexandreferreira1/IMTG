@@ -25,10 +25,10 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      from: '"senderNameSameLikeTheZohoOne" <contato@imtg.com.br>',
+      from: '"IMTG" <contato@imtg.com.br>',
       to: receiver,
       subject,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      text: `Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`,
     };
 
     await transporter.sendMail(mailOptions);

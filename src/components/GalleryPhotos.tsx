@@ -64,7 +64,7 @@ export function GalleryPhotos({ gallery }: GalleryPhotosProps) {
                                 width={422}
                                 height={280}
                                 alt="Image Example"
-                                className="md:h-[280px] md:w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
+                                className="sm:h-[280px] sm:w-[422px] object-cover transition-all duration-1000 hover:scale-110 hover:cursor-pointer hover:duration-1000"
                             />
                         </div>
                     )}

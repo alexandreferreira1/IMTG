@@ -85,7 +85,7 @@ export function Menu() {
           </div>
 
 
-          <Link href="/contribuicao" className="hidden lg:block">
+          <Link href="/faca-sua-contribuicao" className="hidden lg:block">
             <Button title="FAÇA SUA CONTRIBUIÇÃO" size="text-sm" />
           </Link>
 

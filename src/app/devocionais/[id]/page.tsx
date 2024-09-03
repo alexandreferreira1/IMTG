@@ -47,7 +47,7 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
 
       {/* Main */}
       <div className="flex max-w-[760px] flex-col gap-8 pb-24 pt-16 mx-5 md:mx-auto">
-        <CircleButton icon="ShareFat" />
+        <CircleButton/>
         <div className="hygraph-text" dangerouslySetInnerHTML={{ __html: devotional.devotional.content.html }} />
 
         <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">

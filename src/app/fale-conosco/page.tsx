@@ -18,6 +18,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { TextArea } from "@/components/TextArea";
 import axios from 'axios'
+import Link from "next/link";
 interface FormFaleConoscoProps {
   name: string;
   email: string;
@@ -50,7 +51,7 @@ export default function FaleConosco() {
     control,
     formState: { errors, isSubmitting },
   } = useForm<FormFaleConoscoProps>({
-    resolver: yupResolver(formContactSchema),    
+    resolver: yupResolver(formContactSchema),
   });
 
   const onSubmit: SubmitHandler<FormFaleConoscoProps> = async ({ name, email, subject, message }) => {
@@ -61,13 +62,13 @@ export default function FaleConosco() {
       message,
     });
 
-    console.log(response) 
+    console.log(response)
   }
 
   return (
     <>
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-screen-xl pb-24">
         {/* Título */}
         <Title
           title="Como podemos te ajudar?"
@@ -141,7 +142,7 @@ export default function FaleConosco() {
 
             <div className="flex gap-3">
               <Envelope size={24} className="text-red-regular" />
-              <p className="text-lg">imtg@gmail.com</p>
+              <p className="text-lg">igreja.imtg@gmail.com</p>
             </div>
           </div>
 
@@ -154,19 +155,21 @@ export default function FaleConosco() {
               suas críticas e sugestões.
             </p>
 
-            <button
-              className="mx-auto flex h-14 items-center justify-center  
+            <Link href="https://api.whatsapp.com/send?phone=5567992082436&text=Ol%C3%A1%20Pr.%20Agnaldo">
+              <button
+                className="mx-auto flex h-14 items-center justify-center  
                 gap-3 rounded-[4px] bg-red-regular px-7 uppercase text-white hover:bg-red-light"
-            >
-              <Image
-                src="/img/icons/whats.svg"
-                width={22}
-                height={22}
-                alt="Whatsapp Icon"
-                className="h-[22px] w-[22px] object-cover"
-              />
-              ENVIAR WHATSAPP
-            </button>
+              >
+                <Image
+                  src="/img/icons/whats.svg"
+                  width={22}
+                  height={22}
+                  alt="Whatsapp Icon"
+                  className="h-[22px] w-[22px] object-cover"
+                />
+                ENVIAR WHATSAPP
+              </button>
+            </Link>
           </div>
         </div>
       </div>
