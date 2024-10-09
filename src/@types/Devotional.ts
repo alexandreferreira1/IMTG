@@ -12,13 +12,18 @@ export interface Devotional {
 }
 
 export interface DevotionalDetails {
-  devotional: Omit<Devotional, "resume"> & {
-    content: {
-      html: string;
-    }
-  }
+  devotional: Omit<Devotional, "resume"> &
+    {
+      content: {
+        html: string;
+      };
+    }[];
 }
 
 export interface DevotionalList {
   devotionals: Devotional[];
+}
+
+export interface DevotionalsSearch {
+  devotionals: Devotional[] | [];
 }

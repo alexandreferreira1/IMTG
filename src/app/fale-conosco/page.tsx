@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { Title } from "@/components/Title";
 import {
@@ -12,12 +12,12 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { SubmitHandler, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-import * as yup from 'yup';
+import * as yup from "yup";
 import { TextArea } from "@/components/TextArea";
-import axios from 'axios'
+import axios from "axios";
 import Link from "next/link";
 interface FormFaleConoscoProps {
   name: string;
@@ -27,25 +27,19 @@ interface FormFaleConoscoProps {
 }
 
 const formContactSchema = yup.object({
-  name: yup
-    .string()
-    .required('Preencha esse campo, por favor.'),
+  name: yup.string().required("Preencha esse campo, por favor."),
   email: yup
     .string()
-    .email('Digite um e-mail válido.')
-    .required('Preencha esse campo, por favor.'),
-  subject: yup
-    .string()
-    .required('Preencha esse campo, por favor.'),
+    .email("Digite um e-mail válido.")
+    .required("Preencha esse campo, por favor."),
+  subject: yup.string().required("Preencha esse campo, por favor."),
   message: yup
     .string()
-    .required('Preencha esse campo, por favor.')
-    .min(10, 'Digite pelo menos 10 caracteres'),
+    .required("Preencha esse campo, por favor.")
+    .min(10, "Digite pelo menos 10 caracteres"),
 });
 
-
 export default function FaleConosco() {
-
   const {
     handleSubmit,
     control,
@@ -54,16 +48,19 @@ export default function FaleConosco() {
     resolver: yupResolver(formContactSchema),
   });
 
-  const onSubmit: SubmitHandler<FormFaleConoscoProps> = async ({ name, email, subject, message }) => {
+  const onSubmit: SubmitHandler<FormFaleConoscoProps> = async ({
+    name,
+    email,
+    subject,
+    message,
+  }) => {
     const response = await axios.post("/api/contact", {
       name,
       email,
       subject,
       message,
     });
-
-    console.log(response)
-  }
+  };
 
   return (
     <>
@@ -72,13 +69,16 @@ export default function FaleConosco() {
         {/* Título */}
         <Title
           title="Como podemos te ajudar?"
-          subtitle="Entre em contato com a IMTG, queremos orar por você, tirar 
+          subtitle="Entre em contato com a IMTG, queremos orar por você, tirar
           suas dúvidas, ouvir suas críticas e sugestões."
         />
 
         {/* Formulário */}
 
-        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto flex w-full max-w-[656px] flex-col gap-8 px-5">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="mx-auto flex w-full max-w-[656px] flex-col gap-8 px-5"
+        >
           <Input
             id="name"
             control={control}
@@ -117,15 +117,20 @@ export default function FaleConosco() {
             placeholder="Mensagem"
             error={errors.message?.message}
           />
-          <Button type="submit" title="Enviar" variation="secondary" disabled={isSubmitting} />
+          <Button
+            type="submit"
+            title="Enviar"
+            variation="secondary"
+            disabled={isSubmitting}
+          />
           {/* //TODO:colocar fullsize via js */}
         </form>
       </div>
 
       {/* Contato */}
-      <div className=" bg-gray-thin py-24 mt-10 xl:mt-0">
-        <div className="mx-auto flex flex-col md:flex-row max-w-screen-xl items-center justify-center gap-16 xl:gap-32">
-          <div className="w-full max-w-[320px] flex flex-col items-center xl:items-start px-5 xl:px-0 ">
+      <div className=" mt-10 bg-gray-thin py-24 xl:mt-0">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-16 md:flex-row xl:gap-32">
+          <div className="flex w-full max-w-[320px] flex-col items-center px-5 xl:items-start xl:px-0 ">
             <div className="flex gap-3 pb-8">
               <Phone size={24} className="text-red-regular" />
               <p className="text-lg">67 99208-2436</p>
@@ -135,7 +140,7 @@ export default function FaleConosco() {
               <div>
                 <MapPinLine size={24} className="text-red-regular" />
               </div>
-              <p className="text-lg leading-6 text-center xl:text-left">
+              <p className="text-center text-lg leading-6 xl:text-left">
                 Rua Dr. Miguel Vieira Ferreira, 155, Vila Nossa Sra. das Graças
               </p>
             </div>
@@ -157,7 +162,7 @@ export default function FaleConosco() {
 
             <Link href="https://api.whatsapp.com/send?phone=5567992082436&text=Ol%C3%A1%20Pr.%20Agnaldo">
               <button
-                className="mx-auto flex h-14 items-center justify-center  
+                className="mx-auto flex h-14 items-center justify-center
                 gap-3 rounded-[4px] bg-red-regular px-7 uppercase text-white hover:bg-red-light"
               >
                 <Image

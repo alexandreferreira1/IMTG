@@ -1,4 +1,6 @@
-export const GetDevotionalSearch = (searchTerm: string) => `query GetDevotionalSearch {
+export const GetDevotionalSearch = (
+  searchTerm: string,
+) => `query GetDevotionalSearch {
   devotionals(where: {_search: "${searchTerm}"}) {
     id
     title
@@ -12,6 +14,7 @@ export const GetDevotionalSearch = (searchTerm: string) => `query GetDevotionalS
     content {
       html
     }
+    resume
   }
 }
 `;

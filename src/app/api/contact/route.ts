@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
-      secure: true,     
+      secure: true,
       auth: {
         user,
         pass,
@@ -38,7 +38,6 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error) {
-    console.log(error);    
     return new NextResponse(JSON.stringify(error, null, 2), { status: 500 });
   }
 }
