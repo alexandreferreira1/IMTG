@@ -63,8 +63,8 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
 
   let links = Array.from({ length: 3 }, (_, index) => {
     const pageNumber = Math.min(Math.max(currentPage + index, 1), TOTAL_PAGES); // Garante que as páginas fiquem dentro dos limites
+
     return {
-      url: `/devocionais?page=${pageNumber}`,
       label: String(pageNumber),
       active: pageNumber === currentPage,
       id: index,
