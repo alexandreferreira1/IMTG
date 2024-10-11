@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { Button } from "./Button";
 import Link from "next/link";
@@ -7,12 +7,20 @@ import { NavbarMobile } from "./NavbarMobile";
 import { usePathname } from "next/navigation";
 import Devocionais from "@/app/devocionais/page";
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
-import { List } from "@phosphor-icons/react/dist/ssr"
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/navbar";
+import { List } from "@phosphor-icons/react/dist/ssr";
 
 export function Menu() {
-  const pathName = usePathname()
-  const pathNameParts = pathName.split('/')
+  const pathName = usePathname();
+  const pathNameParts = pathName.split("/");
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -27,15 +35,21 @@ export function Menu() {
 
   return (
     <>
-      <div className={clsx("bg-black-dark px-4 hidden lg:block", { "bg-black-dark/70 relative": pathName === '/' || (pathNameParts.length === 3 && pathNameParts[1] === "devocionais") })}>
-        <div className="lg:mx-auto flex h-20 max-w-screen-xl items-center lg:justify-between">
+      <div
+        className={clsx("hidden bg-black-dark px-4 lg:block", {
+          "relative bg-black-dark/70":
+            pathName === "/" ||
+            (pathNameParts.length === 3 && pathNameParts[1] === "devocionais"),
+        })}
+      >
+        <div className="flex h-20 max-w-screen-xl items-center lg:mx-auto lg:justify-between">
           <div className="flex w-full lg:w-auto lg:gap-8">
-            <div className="flex w-full lg:w-auto justify-between">
+            <div className="flex w-full justify-between lg:w-auto">
               {/* Logo */}
               <Link href="/">
                 <Image
                   src="/img/logoietg.png"
-                  width={88}
+                  width={44}
                   height={62}
                   alt="Logotipo da IMTG"
                   quality={100}
@@ -63,35 +77,31 @@ export function Menu() {
             </div> */}
             </div>
 
-
             {/* Nav */}
-            <div className="gap-7 hidden lg:flex ">
+            <div className="hidden gap-7 lg:flex ">
               <button className="text-white transition-all duration-150 hover:text-red-extra-light">
                 <Link href="/">Início</Link>
               </button>
-              <button className="duration-150 text-white transition-all hover:text-red-extra-light">
+              <button className="text-white transition-all duration-150 hover:text-red-extra-light">
                 <Link href="/sobre">Sobre</Link>
               </button>
-              <button className="duration-150 text-white transition-all hover:text-red-extra-light">
+              <button className="text-white transition-all duration-150 hover:text-red-extra-light">
                 <Link href="/devocionais">Devocionais</Link>
               </button>
-              <button className="duration-150 text-white transition-all hover:text-red-extra-light">
+              <button className="text-white transition-all duration-150 hover:text-red-extra-light">
                 <Link href="/galeria">Galeria</Link>
               </button>
-              <button className="duration-150 text-white transition-all hover:text-red-extra-light">
+              <button className="text-white transition-all duration-150 hover:text-red-extra-light">
                 <Link href="/fale-conosco">Fale Conosco</Link>
               </button>
             </div>
           </div>
 
-
           <Link href="/faca-sua-contribuicao" className="hidden lg:block">
             <Button title="FAÇA SUA CONTRIBUIÇÃO" size="text-sm" />
           </Link>
 
-
           {/* <NavbarMobile /> */}
-
         </div>
       </div>
 
