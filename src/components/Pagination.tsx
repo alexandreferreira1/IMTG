@@ -1,100 +1,117 @@
 "use client";
 
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import {
-  PaginationUI as PaginationComponent,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/PaginationUI";
+  ArrowLeft,
+  ArrowRight,
+  CaretDoubleLeft,
+  CaretDoubleRight,
+  CaretLeft,
+} from "@phosphor-icons/react/dist/ssr";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+}
 
-type PaginationProps = {
-  links: {
-    url: string;
-    label: string;
-    active: boolean;
-    id: number;
-  }[];
-  lastPage: number;
-};
-
-export default function Pagination({ links, lastPage }: PaginationProps) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
   const { replace } = useRouter();
+  const searchParamsHook = useSearchParams();
+  const pathname = usePathname();
 
+  // Função para lidar com a mudança de página
   function handleClickPage(pageNumber: number) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParamsHook);
 
     if (pageNumber > 1) {
-      if (pageNumber > lastPage) {
-        params.set("page", lastPage.toString());
-      } else {
-        params.set("page", pageNumber.toString());
-      }
+      params.set("page", pageNumber.toString());
     } else {
       params.delete("page");
     }
 
     replace(`${pathname}?${params.toString()}`, { scroll: true });
   }
-  return (
-    <PaginationComponent>
-      <PaginationContent>
-        <PaginationItem
-          className={`${
-            links[0].url
-              ? "cursor-pointer"
-              : "text-slate-300 hover:text-slate-300 cursor-auto"
-          }`}
-          onClick={() =>
-            handleClickPage(Number(searchParams.get("page") || 1) - 1)
-          }
-        >
-          <PaginationPrevious />
-        </PaginationItem>
 
-        {links.map((link) => {
-          if (link.label.includes("Previous") || link.label.includes("Next")) {
-            return null;
-          }
-
-          if (link.label === "...") {
-            return (
-              <PaginationItem key={link.id} className="hidden md:inline-flex">
-                <PaginationEllipsis />
-              </PaginationItem>
-            );
-          }
-
-          return (
-            <PaginationItem key={link.id} className="cursor-pointer">
-              <PaginationLink
-                onClick={() => handleClickPage(Number(link.label))}
-                isActive={link.active}
-                dangerouslySetInnerHTML={{ __html: link.label }}
-              ></PaginationLink>
-            </PaginationItem>
-          );
-        })}
-
-        <PaginationItem
-          className={`${
-            links[links.length - 1].url
-              ? "cursor-pointer"
-              : "text-slate-300 cursor-auto"
-          }`}
-          onClick={() =>
-            handleClickPage(Number(searchParams.get("page") || 1) + 1)
-          }
-        >
-          <PaginationNext />
-        </PaginationItem>
-      </PaginationContent>
-    </PaginationComponent>
+  const startPage = Math.max(currentPage - 1, 1);
+  const endPage = Math.min(startPage + 2, totalPages);
+  const pageArray = Array.from(
+    { length: endPage - startPage + 1 },
+    (_, i) => startPage + i,
   );
-}
+
+  return (
+    <div className="flex items-center justify-between">
+      <ul className="list-style-none flex items-center py-4">
+        {/* Botão para a primeira página */}
+        <li>
+          <button
+            className="mr-2 flex h-7 w-7 items-center justify-center rounded-full border disabled:opacity-40"
+            onClick={() => handleClickPage(1)}
+            disabled={currentPage === 1}
+            aria-label="Ir para a primeira página"
+          >
+            <CaretDoubleLeft color="black" weight="bold" />
+          </button>
+        </li>
+
+        {/* Botão Anterior */}
+        <li>
+          <button
+            className="mr-2 flex h-7 w-7 items-center justify-center rounded-full border disabled:opacity-40"
+            onClick={() => handleClickPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            aria-label="Página anterior"
+          >
+            <CaretLeft color="black" weight="bold" />
+          </button>
+        </li>
+
+        {/* Páginas */}
+        {pageArray.map((page) => (
+          <li key={page}>
+            <button
+              className={`flex h-7 w-7 items-center justify-center font-sans ${
+                currentPage === page
+                  ? "rounded-md bg-red-light text-white"
+                  : "text-black"
+              }`}
+              onClick={() => handleClickPage(page)}
+              aria-label={`Ir para página ${page}`}
+            >
+              {page}
+            </button>
+          </li>
+        ))}
+
+        {/* Botão Próxima */}
+        <li>
+          <button
+            className="ml-2 flex h-7 w-7 items-center justify-center rounded-full border disabled:opacity-40"
+            onClick={() => handleClickPage(currentPage + 1)}
+            disabled={currentPage >= totalPages}
+            aria-label="Próxima página"
+          >
+            <ArrowRight color="black" weight="bold" />
+          </button>
+        </li>
+
+        {/* Botão para a última página */}
+        <li>
+          <button
+            className="ml-2 flex h-7 w-7 items-center justify-center rounded-full border disabled:opacity-40"
+            onClick={() => handleClickPage(totalPages)}
+            disabled={currentPage === totalPages}
+            aria-label="Ir para a última página"
+          >
+            <CaretDoubleRight color="black" weight="bold" />
+          </button>
+        </li>
+      </ul>
+      <p className="text-center">
+        Página {currentPage} de {totalPages}
+      </p>
+    </div>
+  );
+};
+
+export default Pagination;

@@ -1,18 +1,18 @@
 interface GetDevotionalsParams {
   searchTerm?: string;
-  skip?: number;
+  pageNumber: number;
   first: number;
 }
 
 export const GetDevotionalsQuery = ({
   searchTerm = "",
   first,
-  skip = 0,
+  pageNumber,
 }: GetDevotionalsParams) => `query GetDevotionals {
   devotionals(
     where: {_search: "${searchTerm}"}
     first: ${first}
-    skip: ${skip}
+    skip: ${(pageNumber - 1) * 2}
     orderBy: publishedAt_DESC
     stage: PUBLISHED
   ) {
@@ -30,7 +30,7 @@ export const GetDevotionalsQuery = ({
     devotionalsConnection(
       where: {_search: "${searchTerm}"}
       first: ${first},
-      skip: ${skip}
+      skip: ${(pageNumber - 1) * 2}
     ) {
       pageInfo {
         hasNextPage
