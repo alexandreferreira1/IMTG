@@ -2,19 +2,23 @@
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import {
-  ArrowLeft,
-  ArrowRight,
   CaretDoubleLeft,
   CaretDoubleRight,
   CaretLeft,
+  CaretRight,
 } from "@phosphor-icons/react/dist/ssr";
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
+  maxVisiblePages?: number;
 }
 
-const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
+const Pagination = ({
+  currentPage,
+  totalPages,
+  maxVisiblePages = 3,
+}: PaginationProps) => {
   const { replace } = useRouter();
   const searchParamsHook = useSearchParams();
   const pathname = usePathname();
@@ -32,8 +36,15 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
     replace(`${pathname}?${params.toString()}`, { scroll: true });
   }
 
-  const startPage = Math.max(currentPage - 1, 1);
-  const endPage = Math.min(startPage + 2, totalPages);
+  const startPage = Math.max(
+    Math.min(
+      currentPage - Math.floor(maxVisiblePages / 2),
+      totalPages - maxVisiblePages + 1,
+    ),
+    1,
+  );
+  const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
   const pageArray = Array.from(
     { length: endPage - startPage + 1 },
     (_, i) => startPage + i,
@@ -91,7 +102,7 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
             disabled={currentPage >= totalPages}
             aria-label="Próxima página"
           >
-            <ArrowRight color="black" weight="bold" />
+            <CaretRight color="black" weight="bold" />
           </button>
         </li>
 

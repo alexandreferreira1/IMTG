@@ -12,7 +12,7 @@ export const GetDevotionalsQuery = ({
   devotionals(
     where: {_search: "${searchTerm}"}
     first: ${first}
-    skip: ${(pageNumber - 1) * 2}
+    skip: ${(pageNumber - 1) * first}
     orderBy: publishedAt_DESC
     stage: PUBLISHED
   ) {
@@ -30,7 +30,7 @@ export const GetDevotionalsQuery = ({
     devotionalsConnection(
       where: {_search: "${searchTerm}"}
       first: ${first},
-      skip: ${(pageNumber - 1) * 2}
+      skip: ${(pageNumber - 1) * first}
     ) {
       pageInfo {
         hasNextPage

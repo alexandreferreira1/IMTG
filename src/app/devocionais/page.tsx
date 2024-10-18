@@ -32,14 +32,14 @@ interface SearchParamsProps {
   };
 }
 
-const DEVOTIONALS_ITEMS = 2;
+const DEVOTIONALS_ITEMS = 3;
 
 export default async function Devocionais({ searchParams }: SearchParamsProps) {
   const pageNumber = parseInt(searchParams?.page || "1", 10);
 
   const {
     devotionals,
-    devotionalsConnection: { aggregate, pageInfo },
+    devotionalsConnection: { aggregate },
   } = (await makeRequest(
     GetDevotionalsQuery({
       searchTerm: searchParams?.search,
@@ -76,8 +76,13 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
             ) : (
               <NotFoundSearch />
             )}
-            {pageTotal > 0 && (
-              <Pagination currentPage={pageNumber} totalPages={pageTotal} />
+            {/* Paginação */}
+            {pageTotal > 1 && (
+              <Pagination
+                currentPage={pageNumber}
+                totalPages={pageTotal}
+                maxVisiblePages={5}
+              />
             )}
           </div>
 
@@ -85,7 +90,6 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
             <Search />
           </div>
         </div>
-        {/* Paginação */}
       </div>
     </>
   );
