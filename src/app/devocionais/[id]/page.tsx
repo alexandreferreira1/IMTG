@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { useState } from "react";
+import {  HandsClapping } from "@phosphor-icons/react/dist/ssr"
 
 interface DevotionalDetailsProps {
   params: {
@@ -53,15 +54,18 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
 
         
         {/* Aplausos */}
-        <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">
+        <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular h-24">
           <div className="w-[54px] relative">
-            <Image
+            {/* <Image
               src="/img/icons/applause.svg"
               width={50}
               height={50}
               alt="Image Example"
               className="h-[50px] w-[50px] object-cover"
-            />
+            /> */}
+            <div className="rounded-full border border-black w-fit h-fit p-2 hover:bg-black group">
+            <HandsClapping size={28} weight="thin" className="group-hover:text-white group-active:w-9 group-active:h-9"/>
+            </div>
             {/* Contador */}
             <div className="absolute right-[-3px] bottom-[0px] h-[22px] w-[22px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
           </div>

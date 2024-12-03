@@ -5,6 +5,7 @@ import { GetGalleriesQuery } from "@/graphql/queries/get-galleries";
 import { makeRequest } from "@/utils/hygraph-client";
 import Pagination from "@/components/Pagination";
 
+
 interface SearchParamsProps {
   searchParams?: {
     search?: string;
