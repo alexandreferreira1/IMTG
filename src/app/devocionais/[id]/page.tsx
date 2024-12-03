@@ -3,11 +3,11 @@ import CircleButton from "@/components/CircleButton";
 import { makeRequest } from "@/utils/hygraph-client";
 import { GetDevotionalByIdQuery } from "@/graphql/queries/get-devotional-by-id";
 import { DevotionalDetails as DevotionalDetailsType } from "@/@types/Devotional";
-import { notFound } from 'next/navigation'
+import { notFound } from "next/navigation";
 import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { useState } from "react";
-import {  HandsClapping } from "@phosphor-icons/react/dist/ssr"
+import { Applause } from "@/components/Applause";
+import axios from "axios";
 
 interface DevotionalDetailsProps {
   params: {
@@ -15,47 +15,64 @@ interface DevotionalDetailsProps {
   };
 }
 
-export default async function DevotionalDetails({ params }: DevotionalDetailsProps) {
-
+export default async function DevotionalDetails({
+  params,
+}: DevotionalDetailsProps) {
   const query = GetDevotionalByIdQuery(params.id);
-  const devotional = await makeRequest(query) as DevotionalDetailsType
+  const devotional = (await makeRequest(query)) as DevotionalDetailsType;
 
   if (!devotional) {
-    notFound()
+    notFound();
   }
 
-  const date = new Date(parseISO(devotional.devotional.date))
+  const date = new Date(parseISO(devotional.devotional.date));
+
+  const data = await fetch(
+    `http://localhost:3000/api/applause?devotionalId=${devotional.devotional.id}`,
+  );
+  const applause = await data.json();
 
   return (
     <>
       {/* Menu e Banner */}
       <div
-        style={{ backgroundImage: `url(${devotional.devotional.thumbnail.url})` }}
-        className={`mt-[-80px] h-[400px] lg:h-[700px] bg-cover bg-center bg-no-repeat`}
+        style={{
+          backgroundImage: `url(${devotional.devotional.thumbnail.url})`,
+        }}
+        className={`mt-[-80px] h-[400px] bg-cover bg-center bg-no-repeat lg:h-[700px]`}
       >
-
-        <div className="w-full h-full flex flex-col justify-end pb-[140px] items-center text-center text-white leading-[107%] bg-[#0c222c]/70">
-          <h1 className="font-bold text-5xl lg:text-7xl pb-4 lg:w-[530px] drop-shadow-3xl">{devotional.devotional.title}</h1>
-          <p className="text-white font-thin drop-shadow-3xl">
+        <div className="flex h-full w-full flex-col items-center justify-end bg-[#0c222c]/70 pb-[140px] text-center leading-[107%] text-white">
+          <h1 className="pb-4 text-5xl font-bold drop-shadow-3xl lg:w-[530px] lg:text-7xl">
+            {devotional.devotional.title}
+          </h1>
+          <p className="font-thin text-white drop-shadow-3xl">
             Publicado por{" "}
-            <span className="font-medium text-xs lg:text-base">{devotional.devotional.createdBy.name}</span> • {" "}
-            {/* {devotional.devotional.date} */}
+            <span className="text-xs font-medium lg:text-base">
+              {devotional.devotional.createdBy.name}
+            </span>{" "}
+            • {/* {devotional.devotional.date} */}
             {format(date, "dd 'de' ", { locale: ptBR })}
-            <span className="capitalize">{format(date, "MMMM", { locale: ptBR })}</span>
+            <span className="capitalize">
+              {format(date, "MMMM", { locale: ptBR })}
+            </span>
             {format(date, ", yyyy", { locale: ptBR })}
           </p>
         </div>
       </div>
 
       {/* Main */}
-      <div className="flex max-w-[760px] flex-col gap-8 pb-24 pt-16 mx-5 md:mx-auto">
-        <CircleButton/>
-        <div className="hygraph-text" dangerouslySetInnerHTML={{ __html: devotional.devotional.content.html }} />
+      <div className="mx-5 flex max-w-[760px] flex-col gap-8 pb-24 pt-16 md:mx-auto">
+        <CircleButton />
+        <div
+          className="hygraph-text"
+          dangerouslySetInnerHTML={{
+            __html: devotional.devotional.content.html,
+          }}
+        />
 
-        
         {/* Aplausos */}
-        <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular h-24">
-          <div className="w-[54px] relative">
+        <div className="mt-8 flex h-24 items-center justify-center gap-5 border-y-[1px] border-gray-regular">
+          <div className="relative w-[54px]">
             {/* <Image
               src="/img/icons/applause.svg"
               width={50}
@@ -63,11 +80,10 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
               alt="Image Example"
               className="h-[50px] w-[50px] object-cover"
             /> */}
-            <div className="rounded-full border border-black w-fit h-fit p-2 hover:bg-black group">
-            <HandsClapping size={28} weight="thin" className="group-hover:text-white group-active:w-9 group-active:h-9"/>
-            </div>
-            {/* Contador */}
-            <div className="absolute right-[-3px] bottom-[0px] h-[22px] w-[22px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
+            <Applause
+              quantity={applause.applause}
+              devotionalId={devotional.devotional.id}
+            />
           </div>
 
           <div>
@@ -77,8 +93,6 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
             </p>
           </div>
         </div>
-
-        
       </div>
     </>
   );
