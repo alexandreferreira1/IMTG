@@ -5,6 +5,7 @@ import { GetGalleriesQuery } from "@/graphql/queries/get-galleries";
 import { makeRequest } from "@/utils/hygraph-client";
 import Pagination from "@/components/Pagination";
 
+
 interface SearchParamsProps {
   searchParams?: {
     search?: string;
@@ -34,7 +35,7 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
   return (
     <>
       {/* Main */}
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-screen-xl pb-24">
         {/* Título */}
         <Title title="Galeria de Fotos" subtitle="Confira nossos eventos" />
 

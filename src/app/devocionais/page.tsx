@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Title } from "@/components/Title";
 import { DevotionalItem } from "@/components/DevotionalItem";
 import { makeRequest } from "@/utils/hygraph-client";
@@ -56,8 +57,11 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
       <div className="mx-auto max-w-screen-xl">
         <Title
           title="Devocionais"
-          subtitle="Tire um tempo para meditar na Palavra"
+          subtitle="Dedique um tempo para meditar na Palavra"
         />
+
+        {searchParams?.search &&  <div className="max-w-[702px] mx-9 text-base md:text-xl text-red-regular pb-8">Você pesquisou por <strong>"{searchParams?.search}"</strong>, abaixo estão os resultados:</div>}
+       
 
         <div className="mx-5 flex justify-center gap-36 xl:mx-0">
           <div>
@@ -74,7 +78,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
                 />
               ))
             ) : (
-              <NotFoundSearch />
+              <NotFoundSearch searchParam={searchParams?.search} />
             )}
             {/* Paginação */}
             {pageTotal > 1 && (
@@ -86,7 +90,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
             )}
           </div>
 
-          <div className="hidden xl:block">
+          <div className="hidden xl:block pb-24">
             <Search />
           </div>
         </div>
