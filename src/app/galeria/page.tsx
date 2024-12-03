@@ -1,9 +1,9 @@
 import { Title } from "@/components/Title";
-import {GalleryItem} from "@/components/GalleryItem";
+import { GalleryItem } from "@/components/GalleryItem";
 import { GalleryList } from "@/@types/Gallery";
 import { GetGalleriesQuery } from "@/graphql/queries/get-galleries";
 import { makeRequest } from "@/utils/hygraph-client";
-
+import Pagination from "@/components/Pagination";
 
 interface SearchParamsProps {
   searchParams?: {
@@ -26,26 +26,20 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
       first: GALLERY_ITEMS,
       pageNumber,
     }),
-  )) as GalleryList; 
+  )) as GalleryList;
 
   const { count } = aggregate;
   const pageTotal = Math.ceil(count / GALLERY_ITEMS);
-
-  console.log(galleries)
- 
 
   return (
     <>
       {/* Main */}
       <div className="mx-auto max-w-screen-xl">
         {/* Título */}
-        <Title
-          title="Galeria de Fotos"
-          subtitle="Confira nossos eventos"
-        />
+        <Title title="Galeria de Fotos" subtitle="Confira nossos eventos" />
 
-        <div className="flex flex-wrap justify-center xl:justify-start gap-x-[84px] gap-y-16 mx-5 xl:mx-0">       
-           {galleries.map(gallery =>
+        <div className="mx-5 flex flex-wrap justify-center gap-x-[84px] gap-y-16 xl:mx-0 xl:justify-start">
+          {galleries.map((gallery) => (
             <GalleryItem
               key={gallery.id}
               id={gallery.id}
@@ -53,11 +47,20 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
               quantity={gallery.photos.length}
               title={gallery.title}
               imgUrl={gallery.thumbnail.url}
-            />)} 
+            />
+          ))}
         </div>
 
-        {/* Paginação */}
-        {/* <Pagination /> */}
+        <div className="max-w-xl py-7 ">
+          {/* Paginação */}
+          {pageTotal > 1 && (
+            <Pagination
+              currentPage={pageNumber}
+              totalPages={pageTotal}
+              maxVisiblePages={5}
+            />
+          )}
+        </div>
       </div>
     </>
   );
