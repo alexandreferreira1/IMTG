@@ -1,5 +1,21 @@
-export const GetGalleriesQuery = `query GetGalleries {
-    galleries {
+interface GetGalleriesParams {
+    searchTerm?: string;
+    pageNumber: number;
+    first: number;
+  }
+
+  export const GetGalleriesQuery = ({
+    searchTerm = "",
+    first,
+    pageNumber,
+  }: GetGalleriesParams) =>`query GetGalleries {
+    galleries(
+        where: {_search: "${searchTerm}"}
+        first: ${first}
+        skip: ${(pageNumber - 1) * first}
+        orderBy: publishedAt_DESC
+        stage: PUBLISHED
+    ) {
         title
         date
         id
@@ -10,6 +26,20 @@ export const GetGalleriesQuery = `query GetGalleries {
         thumbnail {
             id
             url
+        }       
+    }
+    galleriesConnection(
+        where: {_search: "${searchTerm}"}
+        first: ${first},
+        skip: ${(pageNumber - 1) * first}
+        ) {
+        pageInfo {
+            hasNextPage
+            hasPreviousPage
+            pageSize
+        }
+        aggregate {
+            count
         }
     }
 }

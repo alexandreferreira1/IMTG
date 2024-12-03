@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { format, parseISO } from "date-fns";
+import { format, parse } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 interface GalleryItemProps {
@@ -12,6 +12,10 @@ interface GalleryItemProps {
 }
 
 export function GalleryItem({ id, date, quantity, title, imgUrl }: GalleryItemProps) {
+
+    const dateFormatted = parse(date, 'yyyy-MM-dd', new Date())
+    console.log(date)
+
     return (
 
         <Link href={`/galeria/${id}`} className="group">
@@ -26,9 +30,9 @@ export function GalleryItem({ id, date, quantity, title, imgUrl }: GalleryItemPr
                     />
                 </div>
                 <h3 className="text-sm text-gray-medium mt-1 group-hover:underline">
-                    {format(date, "dd 'de' ", { locale: ptBR })}
-                    <span className="capitalize">{format(date, "MMMM", { locale: ptBR })}</span>
-                    {format(date, ", yyyy", { locale: ptBR })}
+                    {format(dateFormatted, "dd 'de' ", { locale: ptBR })}
+                    <span className="capitalize">{format(dateFormatted, "MMMM", { locale: ptBR })}</span>
+                    {format(dateFormatted, ", yyyy", { locale: ptBR })}
                     {" "}• {quantity.toString().padStart(2, '0')} foto{quantity > 1 && 's'}
                 </h3>
                 <h4 className="text-lg font-bold text-black group-hover:underline">
