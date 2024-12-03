@@ -1,3 +1,5 @@
+import { ConnectionPattern } from "./Hygraph";
+
 export interface GalleryPhoto {
   id: string;
   url: string;
@@ -16,6 +18,8 @@ export interface Gallery {
 
 export interface GalleryList {
   galleries: Gallery[];
+  galleriesConnection: ConnectionPattern;
+  
 }
 
 export interface GalleryDetails {
