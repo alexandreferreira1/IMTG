@@ -6,6 +6,7 @@ import { DevotionalDetails as DevotionalDetailsType } from "@/@types/Devotional"
 import { notFound } from 'next/navigation'
 import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { useState } from "react";
 
 interface DevotionalDetailsProps {
   params: {
@@ -50,8 +51,10 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
         <CircleButton/>
         <div className="hygraph-text" dangerouslySetInnerHTML={{ __html: devotional.devotional.content.html }} />
 
+        
+        {/* Aplausos */}
         <div className="mt-8 flex items-center justify-center gap-5 border-y-[1px] border-gray-regular py-7">
-          <div className="w-[54px]  relative">
+          <div className="w-[54px] relative">
             <Image
               src="/img/icons/applause.svg"
               width={50}
@@ -62,9 +65,7 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
             {/* Contador */}
             <div className="absolute right-[-3px] bottom-[0px] h-[22px] w-[22px] font-medium text-white rounded-full bg-red-regular text-[10px] flex items-center justify-center pr-[2px]">+2</div>
           </div>
-          {/* <p className="absolute left-[226px] top-[58px] text-[10px] ">
-            +10
-          </p> */}
+
           <div>
             <p className="font-semibold text-black">Gostou do conteúdo?</p>
             <p className="text-gray-medium">
@@ -72,6 +73,8 @@ export default async function DevotionalDetails({ params }: DevotionalDetailsPro
             </p>
           </div>
         </div>
+
+        
       </div>
     </>
   );

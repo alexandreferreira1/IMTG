@@ -69,6 +69,8 @@ export function Search() {
           </div>
         </div>
       </Link>
+     
     </div>
   );
 }
+

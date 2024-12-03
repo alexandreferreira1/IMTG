@@ -22,14 +22,14 @@ export function DevotionalItem({
   title,
 }: DevotionalItemProps) {
   return (
-    <div className="mb-24 flex max-w-[772px] flex-col items-start gap-3">
+    <div className="mb-24 flex max-w-[702px] flex-col items-start gap-3">
       <Link href={`/devocionais/${id}`} className="group">
         <Image
           src={imgUrl}
           width={772}
           height={514}
           alt="Image Example"
-          className="h-[514px] w-[772px] object-cover"
+          className="h-[394px] w-[702px] object-cover"
         />
       </Link>
       <div>
