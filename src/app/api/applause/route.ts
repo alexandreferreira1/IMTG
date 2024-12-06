@@ -14,42 +14,30 @@ export async function GET(request: Request) {
   if (!registerApplause) {
     return new NextResponse("Not found", { status: 404 });
   }
-
-  return NextResponse.json(
+  const response = NextResponse.json(
     { applause: registerApplause.quantity },
     { status: 200 },
   );
+
+  // Adicionar cabeçalhos para desabilitar cache
+  response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+  response.headers.set("Pragma", "no-cache");
+  response.headers.set("Expires", "0");
+
+  return response;
 }
 
 export async function POST(request: Request) {
-  const { devotionalId } = await request.json();
+  const { devotionalId, quantity } = await request.json();
 
-  const registerApplause = await prisma.devotionalsApplause.findUnique({
-    where: {
-      devotionalId,
-    },
+  const registerApplause = await prisma.devotionalsApplause.upsert({
+    where: { devotionalId },
+    create: { devotionalId, quantity: quantity },
+    update: { quantity },
   });
 
-  if (!registerApplause) {
-    await prisma.devotionalsApplause.create({
-      data: {
-        devotionalId,
-        quantity: 1,
-      },
-    });
-  } else {
-    await prisma.devotionalsApplause.update({
-      where: {
-        devotionalId,
-      },
-      data: {
-        quantity: registerApplause.quantity + 1,
-      },
-    });
-  }
-
   return NextResponse.json(
-    { applause: registerApplause?.quantity || 1 },
+    { applause: registerApplause.quantity },
     { status: 200 },
   );
 }

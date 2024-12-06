@@ -1,4 +1,3 @@
-import Image from "next/image";
 import CircleButton from "@/components/CircleButton";
 import { makeRequest } from "@/utils/hygraph-client";
 import { GetDevotionalByIdQuery } from "@/graphql/queries/get-devotional-by-id";
@@ -7,7 +6,6 @@ import { notFound } from "next/navigation";
 import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { Applause } from "@/components/Applause";
-import axios from "axios";
 
 interface DevotionalDetailsProps {
   params: {
@@ -24,13 +22,7 @@ export default async function DevotionalDetails({
   if (!devotional) {
     notFound();
   }
-
   const date = new Date(parseISO(devotional.devotional.date));
-
-  const data = await fetch(
-    `http://localhost:3000/api/applause?devotionalId=${devotional.devotional.id}`,
-  );
-  const applause = await data.json();
 
   return (
     <>
@@ -71,19 +63,9 @@ export default async function DevotionalDetails({
         />
 
         {/* Aplausos */}
-        <div className="mt-8 flex h-24 items-center justify-center gap-5 border-y-[1px] border-gray-regular">
+        <div className="mt-8 flex h-24 select-none items-center justify-center gap-5 border-y-[1px] border-gray-regular">
           <div className="relative w-[54px]">
-            {/* <Image
-              src="/img/icons/applause.svg"
-              width={50}
-              height={50}
-              alt="Image Example"
-              className="h-[50px] w-[50px] object-cover"
-            /> */}
-            <Applause
-              quantity={applause.applause}
-              devotionalId={devotional.devotional.id}
-            />
+            <Applause devotionalId={devotional.devotional.id} />
           </div>
 
           <div>
