@@ -15,6 +15,7 @@
     "@nextui-org/navbar": "^2.0.33",
     "@nextui-org/react": "^2.4.1",
     "@phosphor-icons/react": "^2.1.5-alpha.3",
+    "@prisma/client": "^6.0.1",
     "@types/nodemailer": "^6.4.15",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
@@ -43,6 +44,7 @@
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "prisma": "^6.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
