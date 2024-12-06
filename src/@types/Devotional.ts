@@ -17,7 +17,7 @@ export interface DevotionalDetails {
       content: {
         html: string;
       };
-    }[];
+    }
 }
 
 export interface DevotionalList {

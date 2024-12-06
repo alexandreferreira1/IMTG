@@ -7,6 +7,7 @@ import { Search } from "@/components/Search";
 import { ConnectionPattern } from "@/@types/Hygraph";
 import Pagination from "@/components/Pagination";
 import { NotFoundSearch } from "@/components/NotFoundSearch";
+import { LikedDevotionals } from "@/components/LikedDevotionals";
 
 export interface Devotional {
   id: string;
@@ -60,8 +61,12 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
           subtitle="Dedique um tempo para meditar na Palavra"
         />
 
-        {searchParams?.search &&  <div className="max-w-[702px] mx-9 text-base md:text-xl text-red-regular pb-8">Você pesquisou por <strong>"{searchParams?.search}"</strong>, abaixo estão os resultados:</div>}
-       
+        {searchParams?.search && (
+          <div className="mx-9 max-w-[702px] pb-8 text-base text-red-regular md:text-xl">
+            Você pesquisou por <strong>"{searchParams?.search}"</strong>, abaixo
+            estão os resultados:
+          </div>
+        )}
 
         <div className="mx-5 flex justify-center gap-36 xl:mx-0">
           <div>
@@ -90,8 +95,9 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
             )}
           </div>
 
-          <div className="hidden xl:block pb-24">
+          <div className="hidden pb-24 xl:block">
             <Search />
+            <LikedDevotionals />
           </div>
         </div>
       </div>
