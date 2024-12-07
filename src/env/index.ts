@@ -6,7 +6,7 @@ const envSchema = z.object({
   NEXT_PUBLIC_HYGRAPH_DEV_AUTH_TOKEN: z.string(),
   NEXT_PUBLIC_HYGRAPH_PREVIEW_SECRET: z.string(),
   NEXT_PUBLIC_EMAIL: z.string(),
-  NEXT_PUBLIC_PASSWORD: z.string(),
+  NEXT_PUBLIC_EMAIL_PASSWORD: z.string(),
   NEXT_PUBLIC_EMAIL_RECEIVER: z.string(),
 });
 const _env = envSchema.safeParse(process.env);

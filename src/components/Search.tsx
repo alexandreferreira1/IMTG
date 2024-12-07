@@ -1,13 +1,13 @@
 "use client";
 
-import InputSearch from "./InputSearch";
-
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Input } from "./Input";
 import { Button } from "./Button";
 
+import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface InputSearchProps {
@@ -23,7 +23,11 @@ export function Search() {
     searchTerm: yup.string(),
   });
 
-  const { control, handleSubmit } = useForm<InputSearchProps>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<InputSearchProps>({
     resolver: yupResolver(searchSchema),
     defaultValues: {
       searchTerm: "",
@@ -43,7 +47,16 @@ export function Search() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
-      <InputSearch control={control} />
+      <Input
+        id="search"
+        control={control}
+        icon={<MagnifyingGlass size={24} className="text-black" />}
+        name="searchTerm"
+        placeholder="Pesquisar um tema"
+        type="text"
+        iconPosition="right"
+        error={errors.searchTerm?.message}
+      />
       <Button title="Buscar" variation="secondary" />
     </form>
   );
