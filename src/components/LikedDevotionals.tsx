@@ -5,13 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { BASE_URL } from "@/utils/get-url";
 
 interface DevotionalsLikedType {
   devotionals: [{ devotionalId: string; quantity: number }];
 }
 
 export async function LikedDevotionals() {
-  const response = await fetch("http://localhost:3000/api/liked-devotionals");
+  const response = await fetch(`${BASE_URL}/api/liked-devotionals`);
 
   let likedDevotionals = [] as string[];
 
