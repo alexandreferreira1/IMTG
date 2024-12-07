@@ -61,7 +61,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
           subtitle="Dedique um tempo para meditar na Palavra"
         />
 
-        {searchParams?.search && (
+        {searchParams?.search && devotionals.length !== 0 && (
           <div className="mx-9 max-w-[702px] pb-8 text-base text-red-regular md:text-xl">
             Você pesquisou por <strong>"{searchParams?.search}"</strong>, abaixo
             estão os resultados:

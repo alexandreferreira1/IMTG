@@ -2,13 +2,9 @@ import { env } from "@/env";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// const user = env.EMAIL;
-// const pass = env.PASSWORD;
-// const receiver = env.EMAIL_RECEIVER
-
-const user = "contato@imtg.com.br";
-const pass = "u1imArs&";
-const receiver = "alexandre.x.f00@gmail.com";
+const user = env.NEXT_PUBLIC_EMAIL;
+const pass = env.NEXT_PUBLIC_EMAIL_PASSWORD;
+const receiver = env.NEXT_PUBLIC_EMAIL_RECEIVER;
 
 export async function POST(request: Request) {
   try {

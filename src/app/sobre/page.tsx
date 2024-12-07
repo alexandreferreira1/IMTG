@@ -1,4 +1,4 @@
-'use client'
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { Menu } from "@/components/Menu";
@@ -6,30 +6,32 @@ import { Footer } from "@/components/Footer";
 import { Title } from "@/components/Title";
 import { Button } from "@/components/Button";
 import useWindowDimentions from "@/hooks/useWindowDimensions";
+import Link from "next/link";
 
 export default function Sobre() {
-  const { width } = useWindowDimentions()
-
+  const { width } = useWindowDimentions();
 
   return (
     <>
       {/* Main */}
       <div className="mx-auto max-w-[1016px] ">
         {/* Título */}
-        <Title title="Sobre Nós" subtitle="Conheça um pouco da nossa história" />
-
+        <Title
+          title="Sobre Nós"
+          subtitle="Conheça um pouco da nossa história"
+        />
 
         {/* Sobre 1 */}
-        <div className="flex flex-col xl:flex-row justify-center gap-10 mx-5 xl:mx-0">
+        <div className="mx-5 flex flex-col justify-center gap-10 xl:mx-0 xl:flex-row">
           <Image
             src="/img/fachada-exemplo.jpg"
             width={498}
             height={588}
             alt="Logotipo da IMTG"
-            className="xl:h-[588px] xl:w-[498px] object-cover mx-auto"
+            className="mx-auto object-cover xl:h-[588px] xl:w-[498px]"
           />
 
-          <div className="flex xl:h-[588px] xl:w-[480px] flex-col gap-5 items-center xl:items-start">
+          <div className="flex flex-col items-center gap-5 xl:h-[588px] xl:w-[480px] xl:items-start">
             <Image
               src="/img/logoietg.png"
               width={82}
@@ -38,10 +40,10 @@ export default function Sobre() {
               className="h-[114px] w-[82px]"
             />
             <div>
-              <h3 className="font-medium text-gray-medium text-center xl:text-left">
+              <h3 className="text-center font-medium text-gray-medium xl:text-left">
                 UM POUCO DA NOSSA HISTÓRIA E DOS NOSSOS VALORES
               </h3>
-              <h2 className="mt-2 text-4xl md:text-[46px] font-bold leading-[125%] text-black text-center xl:text-left">
+              <h2 className="mt-2 text-center text-4xl font-bold leading-[125%] text-black md:text-[46px] xl:text-left">
                 Nossa igreja começou há 7 anos atrás
               </h2>
             </div>
@@ -63,13 +65,13 @@ export default function Sobre() {
         </div>
 
         {/* Sobre 2 */}
-        <div className="py-10  mx-5 xl:mx-0">
-          <div className="flex flex-col items-center mx-auto xl:w-[705px] py-10">
-            <p className=" text-center text-4xl md:text-5xl font-bold  text-black">
+        <div className="mx-5  py-10 xl:mx-0">
+          <div className="mx-auto flex flex-col items-center py-10 xl:w-[705px]">
+            <p className=" text-center text-4xl font-bold text-black  md:text-5xl">
               “Porque a graça de Deus se manifestou, trazendo salvação
             </p>
             <div className="flex flex-col">
-              <p className="md:animate-typing md:overflow-hidden md:whitespace-nowrap md:border-r-4 md:pr-1 text-center text-4xl md:text-5xl font-bold  text-black">
+              <p className="text-center text-4xl font-bold text-black md:animate-typing md:overflow-hidden md:whitespace-nowrap md:border-r-4 md:pr-1  md:text-5xl">
                 para todos os homens."
               </p>
             </div>
@@ -110,10 +112,10 @@ export default function Sobre() {
           width={1016}
           height={519}
           alt=""
-          className="xl:h-[519px] xl:w-[1016px] object-cover mx-auto px-5 xl:px-0"
+          className="mx-auto object-cover px-5 xl:h-[519px] xl:w-[1016px] xl:px-0"
         />
         {/* Sobre 4 */}
-        <p className="py-10 text-lg leading-[140%] mx-5 xl:mx-0 text-gray-medium">
+        <p className="mx-5 py-10 text-lg leading-[140%] text-gray-medium xl:mx-0">
           Donec pulvinar est id neque sollicitudin consectetur. Nullam at metus
           dapibus, tempor arcu non, ultricies tellus. Integer egestas nulla vel
           ex mollis gravida. Aenean et rutrum ligula, a eleifend risus. Sed id
@@ -139,39 +141,39 @@ export default function Sobre() {
           erat.
         </p>
         {/* Sobre 4 */}
-        <div className="flex flex-wrap gap-3 xl:gap-5 mx-5 xl:mx-0 pb-24">
+        <div className="mx-5 flex flex-wrap gap-3 pb-24 xl:mx-0 xl:gap-5">
           <Image
             src="/img/images/gallery-about-1.jpg"
             width={498}
             height={332}
             alt=""
-            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
           />
           <Image
             src="/img/images/gallery-about-2.jpg"
             width={498}
             height={332}
             alt=""
-            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
           />
           <Image
             src="/img/images/gallery-about-3.jpg"
             width={498}
             height={332}
             alt=""
-            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
           />
           <Image
             src="/img/images/gallery-about-4.jpg"
             width={498}
             height={332}
             alt=""
-            className="lg:h-[300px] md:h-[250px] md:w-[49%] xl:h-[332px] xl:w-[498px] object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 "
+            className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
           />
 
-          <Button title="VER MAIS FOTOS" fullsize={width < 1024} />
-
-
+          <Link href="/galeria">
+            <Button title="VER MAIS FOTOS" fullsize={width < 1024} />
+          </Link>
         </div>
       </div>
     </>
