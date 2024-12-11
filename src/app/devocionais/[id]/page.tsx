@@ -34,10 +34,10 @@ export default async function DevotionalDetails({
         className={`mt-[-80px] h-[400px] bg-cover bg-center bg-no-repeat lg:h-[700px]`}
       >
         <div className="flex h-full w-full flex-col items-center justify-end bg-[#0c222c]/70 pb-[140px] text-center leading-[107%] text-white">
-          <h1 className="pb-4 text-5xl font-bold drop-shadow-3xl lg:w-[530px] lg:text-7xl">
+          <h1 className="pb-4 text-2xl font-bold drop-shadow-3xl sm:text-5xl lg:w-[530px] lg:text-7xl">
             {devotional.devotional.title}
           </h1>
-          <p className="font-thin text-white drop-shadow-3xl">
+          <p className="text-xs font-thin text-white drop-shadow-3xl">
             Publicado por{" "}
             <span className="text-xs font-medium lg:text-base">
               {devotional.devotional.createdBy.name}
