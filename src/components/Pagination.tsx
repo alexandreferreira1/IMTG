@@ -1,5 +1,4 @@
 "use client";
-
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import {
   CaretDoubleLeft,
@@ -51,7 +50,7 @@ const Pagination = ({
   );
 
   return (
-    <div className="flex items-center justify-between mb-12">
+    <div className="mb-12 flex items-center justify-between">
       <ul className="list-style-none flex items-center py-4">
         {/* Botão para a primeira página */}
         <li>

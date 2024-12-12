@@ -1,7 +1,4 @@
-"use client";
-
 import { ReactNode, TextareaHTMLAttributes } from "react";
-
 import { clsx } from "clsx";
 import { Controller } from "react-hook-form";
 

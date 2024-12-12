@@ -5,13 +5,13 @@ import { HandHeart, Church } from "@phosphor-icons/react/dist/ssr";
 
 export default function Contribuicao() {
   return (
-    <>
+    <section>
       {/* Main */}
       <div className="mx-auto max-w-screen-xl py-10 md:py-24">
         {/* Pix */}
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-12 xl:gap-32 text-center xl:text-left px-5 xl:px-0">
+        <div className="flex flex-col items-center justify-center gap-12 px-5 text-center xl:flex-row xl:gap-32 xl:px-0 xl:text-left">
           <div className=" md:w-[600px]">
-            <h2 className="pb-6 text-3xl xl:text-4xl font-extrabold text-black">
+            <h2 className="pb-6 text-3xl font-extrabold text-black xl:text-4xl">
               FAÇA UMA CONTRIBUIÇÃO COM PIX ATRAVÉS DO QR CODE
             </h2>
             <p className="pb-6 text-lg text-gray-regular">
@@ -32,7 +32,7 @@ export default function Contribuicao() {
               width={322}
               height={322}
               alt="Whatsapp Icon"
-              className="xl:h-[322px] xl:w-[322px] w-52 object-cover"
+              className="w-52 object-cover xl:h-[322px] xl:w-[322px]"
             />
           </div>
         </div>
@@ -40,8 +40,8 @@ export default function Contribuicao() {
 
       {/* Contato */}
       <div className=" bg-gray-thin py-12 md:py-24">
-        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-12 xl:px-0 px-10">
-          <div className="xl:w-[870px] text-center text-black">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-12 px-10 xl:px-0">
+          <div className="text-center text-black xl:w-[870px]">
             <h3 className="pb-4 text-[40px] font-bold">
               Sua doação será destinada
             </h3>
@@ -54,9 +54,9 @@ export default function Contribuicao() {
           </div>
 
           {/* CARDS */}
-          <div className="flex sm:flex-row flex-col sm:gap-4 md:gap-8 gap-10 xl:gap-24">
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-4 md:gap-8 xl:gap-24">
             {/* 1 */}
-            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white md:p-12 p-8">
+            <div className="flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white p-8 shadow-3xl md:p-12">
               <div className="pb-6 text-red-regular">
                 <HandHeart size={60} />
               </div>
@@ -64,7 +64,7 @@ export default function Contribuicao() {
               <h4 className="pb-2 text-2xl font-bold text-black">
                 Trabalho Social
               </h4>
-              <p className="w-56 md:w-64 text-center text-gray-medium">
+              <p className="w-56 text-center text-gray-medium md:w-64">
                 Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
                 sed, porttitor feugiat ligula. Ut interdum augue odio, nec
                 egestas lectus fermentum nec.
@@ -72,7 +72,7 @@ export default function Contribuicao() {
             </div>
 
             {/* 2 */}
-            <div className="shadow-3xl flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white md:p-12 p-8 text-center">
+            <div className="flex flex-col items-center rounded-t-md border-b-[3px] border-solid border-red-regular bg-white p-8 text-center shadow-3xl md:p-12">
               <div className="pb-6 text-red-regular">
                 <Church size={60} />
               </div>
@@ -80,7 +80,7 @@ export default function Contribuicao() {
               <h4 className="pb-2 text-2xl font-bold text-black">
                 Edificação do Templo
               </h4>
-              <p className="w-56 md:w-64 text-center text-gray-medium">
+              <p className="w-56 text-center text-gray-medium md:w-64">
                 Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
                 sed, porttitor feugiat ligula. Ut interdum augue odio, nec
                 egestas lectus fermentum nec.
@@ -89,6 +89,6 @@ export default function Contribuicao() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

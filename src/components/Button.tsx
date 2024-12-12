@@ -17,12 +17,17 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={clsx("h-14 rounded-[4px] px-7 uppercase transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed", {
-        "bg-red-regular text-white hover:bg-red-light": variation == "primary",
-        "bg-black text-white hover:bg-black-dark": variation == "secondary",
-        "w-full": fullsize,
-        "w-fit": !fullsize,
-      }, size)}
+      className={clsx(
+        "h-14 rounded-[4px] px-7 uppercase transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-40",
+        {
+          "bg-red-regular text-white hover:bg-red-light":
+            variation == "primary",
+          "bg-black text-white hover:bg-black-dark": variation == "secondary",
+          "w-full": fullsize,
+          "w-fit": !fullsize,
+        },
+        size,
+      )}
       {...rest}
     >
       {title}

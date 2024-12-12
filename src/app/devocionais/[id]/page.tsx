@@ -27,7 +27,7 @@ export default async function DevotionalDetails({
   return (
     <>
       {/* Menu e Banner */}
-      <div
+      <section
         style={{
           backgroundImage: `url(${devotional.devotional.thumbnail.url})`,
         }}
@@ -50,10 +50,10 @@ export default async function DevotionalDetails({
             {format(date, ", yyyy", { locale: ptBR })}
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Main */}
-      <div className="mx-5 flex max-w-[760px] flex-col gap-8 pb-24 pt-16 md:mx-auto">
+      <section className="mx-5 flex max-w-[760px] flex-col gap-8 pb-24 pt-16 md:mx-auto">
         <CircleButton />
         <div
           className="hygraph-text"
@@ -75,7 +75,7 @@ export default async function DevotionalDetails({
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

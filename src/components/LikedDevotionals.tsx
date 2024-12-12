@@ -32,7 +32,7 @@ export async function LikedDevotionals() {
   });
 
   return (
-    <div>
+    <section>
       {devotionalsSorted.length > 0 && (
         <>
           <h3 className="pb-4 pt-10 text-lg font-bold text-black">
@@ -67,6 +67,6 @@ export async function LikedDevotionals() {
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 }

@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <div className="bg-black-dark z-10  px-4">
-      <div className="mx-auto flex flex-col gap-6 xl:flex-row max-w-screen-xl items-center justify-between py-11">
-        <div className="text-center text-white xl:order-1 order-3">
+    <div className="z-10 bg-black-dark  px-4">
+      <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-6 py-11 xl:flex-row">
+        <div className="order-3 text-center text-white xl:order-1">
           <p>IMTG © 2024</p>
           <p>Todos os direitos reservados</p>
         </div>
@@ -19,19 +19,22 @@ export function Footer() {
               width={321}
               height={123}
               alt="Arte do Footer"
-              className="mx-auto xl:h-[123px] xl:w-[321px] w-[200px]"
+              className="mx-auto w-[200px] xl:h-[123px] xl:w-[321px]"
             />
           </Link>
         </div>
 
-        <div className="h-[45px] xl:w-[215px] flex justify-center w-full xl:justify-end gap-3 xl:order-3">
-          <Link href="https://www.facebook.com/imtempodagraca?_rdr" rel="noopener noreferrer" target="_blank">
-            <FacebookLogo variation="primary" />
+        <div className="flex h-[45px] w-full justify-center gap-3 xl:order-3 xl:w-[215px] xl:justify-end">
+          <Link
+            href="https://www.facebook.com/imtempodagraca?_rdr"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <FacebookLogo />
           </Link>
           <Link href="/fale-conosco">
-            <EmailLogo variation="primary" />
+            <EmailLogo />
           </Link>
-
         </div>
       </div>
     </div>

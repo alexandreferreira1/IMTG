@@ -32,7 +32,7 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
   const pageTotal = Math.ceil(count / GALLERY_ITEMS);
 
   return (
-    <>
+    <section>
       {/* Main */}
       <div className="mx-auto max-w-screen-xl pb-24">
         {/* Título */}
@@ -62,6 +62,6 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
           )}
         </div>
       </div>
-    </>
+    </section>
   );
 }
