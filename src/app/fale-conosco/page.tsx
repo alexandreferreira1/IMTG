@@ -7,7 +7,7 @@ import { FormContact } from "@/components/FormContact";
 
 export default function FaleConosco() {
   return (
-    <>
+    <section>
       {/* Main */}
       <div className="mx-auto max-w-screen-xl pb-24">
         {/* Título */}
@@ -16,7 +16,6 @@ export default function FaleConosco() {
           subtitle="Entre em contato com a IMTG, queremos orar por você, tirar
           suas dúvidas, ouvir suas críticas e sugestões."
         />
-
         <FormContact />
       </div>
 
@@ -45,13 +44,13 @@ export default function FaleConosco() {
           </div>
 
           <div className="flex max-w-[321px] flex-col gap-6 xl:gap-3">
-            <p className="text-center text-4xl font-bold text-black">
+            <h2 className="text-center text-4xl font-bold text-black">
               Entre em contato com a gente!
-            </p>
-            <p className="text-center text-lg leading-6 text-gray-medium">
+            </h2>
+            <h3 className="text-center text-lg leading-6 text-gray-medium">
               Entre em contato com a IMTG, queremos tirar suas dúvidas, ouvir
               suas críticas e sugestões.
-            </p>
+            </h3>
 
             <Link href="https://api.whatsapp.com/send?phone=5567992082436&text=Ol%C3%A1%20Pr.%20Agnaldo">
               <button
@@ -71,6 +70,6 @@ export default function FaleConosco() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

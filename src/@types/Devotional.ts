@@ -1,6 +1,8 @@
+import { ConnectionPattern } from "./Hygraph";
+
 export interface Devotional {
-  date: string;
   id: string;
+  date: string;
   title: string;
   createdBy: {
     name: string;
@@ -12,16 +14,16 @@ export interface Devotional {
 }
 
 export interface DevotionalDetails {
-  devotional: Omit<Devotional, "resume"> &
-    {
-      content: {
-        html: string;
-      };
-    }
+  devotional: Omit<Devotional, "resume"> & {
+    content: {
+      html: string;
+    };
+  };
 }
 
 export interface DevotionalList {
   devotionals: Devotional[];
+  devotionalsConnection?: ConnectionPattern;
 }
 
 export interface DevotionalsSearch {

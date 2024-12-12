@@ -46,18 +46,20 @@ export function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
-      <Input
-        id="search"
-        control={control}
-        icon={<MagnifyingGlass size={24} className="text-black" />}
-        name="searchTerm"
-        placeholder="Pesquisar um tema"
-        type="text"
-        iconPosition="right"
-        error={errors.searchTerm?.message}
-      />
-      <Button title="Buscar" variation="secondary" />
-    </form>
+    <section>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+        <Input
+          id="search"
+          control={control}
+          icon={<MagnifyingGlass size={24} className="text-black" />}
+          name="searchTerm"
+          placeholder="Pesquisar um tema"
+          type="text"
+          iconPosition="right"
+          error={errors.searchTerm?.message}
+        />
+        <Button title="Buscar" variation="secondary" />
+      </form>
+    </section>
   );
 }

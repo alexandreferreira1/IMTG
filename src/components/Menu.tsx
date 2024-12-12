@@ -5,33 +5,10 @@ import Link from "next/link";
 import clsx from "clsx";
 import { NavbarMobile } from "./NavbarMobile";
 import { usePathname } from "next/navigation";
-import Devocionais from "@/app/devocionais/page";
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { List } from "@phosphor-icons/react/dist/ssr";
 
 export function Menu() {
   const pathName = usePathname();
   const pathNameParts = pathName.split("/");
-
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Início",
-    "Sobre",
-    "Devocionais",
-    "Galeria",
-    "Fale Conosco",
-    "Faça sua Contribuição",
-  ];
 
   return (
     <>
@@ -56,25 +33,6 @@ export function Menu() {
                   className="h-[62px] w-11"
                 />
               </Link>
-              {/* Hamburguer Button Mobile
-            <div className="lg:hidden my-auto">
-              <button
-                className="p-2 text-black rounded-md outline-none focus:border-gray-medium"
-                onClick={() => setNavBar(!navbar)}
-              >
-                {navbar ? (
-                  <Image src="/img/icons/close.svg" width={30} height={30} alt="close button" />
-                ) : (
-                  <Image
-                    src="/img/icons/menu.svg"
-                    width={30}
-                    height={30}
-                    alt="menu button"
-                    className="focus:border-none active:border-none"
-                  />
-                )}
-              </button>
-            </div> */}
             </div>
 
             {/* Nav */}
@@ -100,11 +58,8 @@ export function Menu() {
           <Link href="/faca-sua-contribuicao" className="hidden lg:block">
             <Button title="FAÇA SUA CONTRIBUIÇÃO" size="text-sm" />
           </Link>
-
-          {/* <NavbarMobile /> */}
         </div>
       </div>
-
       <NavbarMobile />
     </>
   );

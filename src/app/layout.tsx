@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
-import "./globals.css";
-import { NextUIProvider } from "@nextui-org/react";
+
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
+
 import { Providers } from "./providers";
-import Link from "next/link";
+
+import "./globals.css";
 
 const font = Kumbh_Sans({
-  weight: ['300', '400', '500', '600', '700', '800'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,11 +29,11 @@ export default function RootLayout({
     <html lang="pt-BR" className="light">
       <body className={font.className}>
         <Providers>
-          <div>
+          <main>
             <Menu />
             {children}
             <Footer />
-          </div>
+          </main>
         </Providers>
       </body>
     </html>

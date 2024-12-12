@@ -4,28 +4,10 @@ import { DevotionalItem } from "@/components/DevotionalItem";
 import { makeRequest } from "@/utils/hygraph-client";
 import { GetDevotionalsQuery } from "@/graphql/queries/get-devotionals";
 import { Search } from "@/components/Search";
-import { ConnectionPattern } from "@/@types/Hygraph";
 import Pagination from "@/components/Pagination";
 import { NotFoundSearch } from "@/components/NotFoundSearch";
 import { LikedDevotionals } from "@/components/LikedDevotionals";
-
-export interface Devotional {
-  id: string;
-  date: string;
-  title: string;
-  createdBy: {
-    name: string;
-  };
-  thumbnail: {
-    url: string;
-  };
-  resume: string;
-}
-
-export interface DevotionalList {
-  devotionals: Devotional[];
-  devotionalsConnection: ConnectionPattern;
-}
+import { DevotionalList } from "@/@types/Devotional";
 
 interface SearchParamsProps {
   searchParams?: {
@@ -39,10 +21,7 @@ const DEVOTIONALS_ITEMS = 3;
 export default async function Devocionais({ searchParams }: SearchParamsProps) {
   const pageNumber = parseInt(searchParams?.page || "1", 10);
 
-  const {
-    devotionals,
-    devotionalsConnection: { aggregate },
-  } = (await makeRequest(
+  const { devotionals, devotionalsConnection } = (await makeRequest(
     GetDevotionalsQuery({
       searchTerm: searchParams?.search,
       first: DEVOTIONALS_ITEMS,
@@ -50,7 +29,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
     }),
   )) as DevotionalList;
 
-  const { count } = aggregate;
+  const { count } = devotionalsConnection?.aggregate || { count: 0 };
   const pageTotal = Math.ceil(count / DEVOTIONALS_ITEMS);
 
   return (
@@ -69,7 +48,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
         )}
 
         <div className="mx-5 flex justify-center gap-36 xl:mx-0">
-          <div>
+          <section>
             {devotionals.length > 0 ? (
               devotionals.map((devotional) => (
                 <DevotionalItem
@@ -93,7 +72,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
                 maxVisiblePages={5}
               />
             )}
-          </div>
+          </section>
 
           <div className="hidden pb-24 xl:block">
             <Search />

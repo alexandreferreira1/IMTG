@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonArrow } from "./ButtonArrow";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 interface DevotionalItemProps {

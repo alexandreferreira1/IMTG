@@ -1,12 +1,9 @@
 import { makeRequest } from "@/utils/hygraph-client";
 import { GetGalleryByIdQuery } from "@/graphql/queries/get-gallery-by-id";
 import { GalleryDetails as GalleryDetailsType } from "@/@types/Gallery";
-import { notFound } from 'next/navigation'
-import "react-image-gallery/styles/css/image-gallery.css"
-import { useState } from "react";
+import { notFound } from "next/navigation";
+import "react-image-gallery/styles/css/image-gallery.css";
 import { GalleryPhotos } from "@/components/GalleryPhotos";
-
-
 
 interface GalleryDetailsProps {
   params: {
@@ -15,15 +12,12 @@ interface GalleryDetailsProps {
 }
 
 export default async function GalleryDetails({ params }: GalleryDetailsProps) {
-
-  const query = GetGalleryByIdQuery(params.id)
-  const gallery = await makeRequest(query) as GalleryDetailsType
+  const query = GetGalleryByIdQuery(params.id);
+  const gallery = (await makeRequest(query)) as GalleryDetailsType;
 
   if (!gallery) {
-    notFound()
+    notFound();
   }
 
-  return (
-    <GalleryPhotos gallery={gallery}/>
-  );
+  return <GalleryPhotos gallery={gallery} />;
 }

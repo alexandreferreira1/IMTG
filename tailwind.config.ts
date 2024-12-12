@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import {nextui} from "@nextui-org/react";
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
@@ -16,32 +16,32 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        '3xl': '0px 4px 15px 0px rgba(0,0,0,0.20)'
+        "3xl": "0px 4px 15px 0px rgba(0,0,0,0.20)",
       },
       dropShadow: {
-        '3xl': '0 5px 5px rgba(0, 0, 0, 0.5)'
+        "3xl": "0 5px 5px rgba(0, 0, 0, 0.5)",
       },
       keyframes: {
         typing: {
-          '0%': {
-            width: '0%',
-            visibility: 'hidden',
+          "0%": {
+            width: "0%",
+            visibility: "hidden",
           },
-          '40%': {
-            width: '100%',
+          "40%": {
+            width: "100%",
           },
-          '100%': {
-            width: '100%',
+          "100%": {
+            width: "100%",
           },
         },
         blink: {
-          '50%': {
-            borderColor: 'transparent',
+          "50%": {
+            borderColor: "transparent",
           },
         },
       },
       animation: {
-        typing: 'typing 5s steps(19) infinite, blink .8s step-end infinite',
+        typing: "typing 5s steps(19) infinite, blink .8s step-end infinite",
       },
     },
 
@@ -54,12 +54,14 @@ const config: Config = {
       "gray-light": "#F0F0F0",
       "gray-regular": "#9CA8AF",
       "gray-medium": "#8B99A1",
+      slate: "#324049",
       black: "#384953",
       "black-dark": "#181818",
       yellow: "#FFAD29",
+      "blue-dark": "#0c222c",
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [nextui()],
 };
 export default config;

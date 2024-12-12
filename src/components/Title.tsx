@@ -5,9 +5,11 @@ interface TitleProps {
 
 export function Title({ title, subtitle }: TitleProps) {
   return (
-    <div className="py-12 xl:py-24 text-center max-w-[800px] mx-5  md:mx-auto">
-      <h1 className="text-4xl xl:text-6xl font-bold text-black xl:pb-2">{title}</h1>
-      <h3 className="text-sm xl:text-xl text-gray-medium">{subtitle}</h3>
+    <div className="mx-5 max-w-[800px] py-12 text-center md:mx-auto  xl:py-24">
+      <h1 className="text-4xl font-bold text-black xl:pb-2 xl:text-6xl">
+        {title}
+      </h1>
+      <h2 className="text-sm text-gray-medium xl:text-xl">{subtitle}</h2>
     </div>
   );
 }
