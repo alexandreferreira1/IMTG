@@ -5,7 +5,6 @@ import { GetGalleriesQuery } from "@/graphql/queries/get-galleries";
 import { makeRequest } from "@/utils/hygraph-client";
 import Pagination from "@/components/Pagination";
 
-
 interface SearchParamsProps {
   searchParams?: {
     search?: string;
@@ -52,7 +51,7 @@ export default async function Galeria({ searchParams }: SearchParamsProps) {
           ))}
         </div>
 
-        <div className="max-w-xl py-7 ">
+        <div className="max-w-xl px-10 py-7 xl:px-0 ">
           {/* Paginação */}
           {pageTotal > 1 && (
             <Pagination

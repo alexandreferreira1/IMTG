@@ -7,10 +7,10 @@ export default function Home() {
     <>
       {/* Banner */}
       <div
-        className="mt-[-80px] h-[400px] lg:h-[700px] bg-[url('/img/images/banner-home1.png')] bg-cover bg-center bg-no-repeat"
+        className="mt-[-80px] h-[400px] bg-[url('/img/images/banner-home1.png')] bg-cover bg-center bg-no-repeat lg:h-[700px]"
         // style={{ backgroundPositionY: "50%" }}
       >
-        <div className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white w-full h-full flex flex-col justify-end items-center pb-11 bg-[#0c222c]/70">
+        <div className="flex h-full w-full flex-col items-center justify-end bg-[#0c222c]/70 pb-11 text-3xl font-bold text-white sm:text-4xl lg:text-6xl">
           <p className="drop-shadow-3xl">Seja bem vindo!</p>
           <p className="drop-shadow-3xl">Um lugar para família</p>
         </div>
@@ -19,7 +19,7 @@ export default function Home() {
       {/* Main */}
       <div>
         {/* Sobre */}
-        <div className="mx-auto flex max-w-screen-xl flex-col items-center gap-8 xl:gap-[84px]  py-10 xl:py-20 xl:flex-row">
+        <div className="mx-auto flex max-w-screen-xl flex-col items-center gap-8 py-10  xl:flex-row xl:gap-[84px] xl:py-20">
           <div className="relative hidden shrink-0 md:block">
             <Image
               src="/img/fachada-exemplo.jpg"
@@ -29,14 +29,14 @@ export default function Home() {
               className="object-cover xl:h-[680px] xl:w-[550px]"
             />
 
-            <div className="bottom-0 right-[-190px] xl:flex h-[200px]  w-full items-center justify-center bg-[#324049] px-10 xl:absolute xl:w-[403px] hidden">
+            <div className="bottom-0 right-[-190px] hidden h-[200px]  w-full items-center justify-center bg-[#324049] px-10 xl:absolute xl:flex xl:w-[403px]">
               <p className="mx-auto w-full shrink-0 text-center text-3xl font-bold leading-[125%] text-white xl:text-left xl:text-[32px]">
                 “Porque a graça de Deus se manisfestou”
               </p>
             </div>
           </div>
 
-          <div className="flex xl:h-[435px] flex-col gap-6 px-10 xl:pl-[200px]">
+          <div className="flex flex-col gap-4 px-10 sm:gap-6 xl:h-[435px] xl:pl-[200px]">
             <Image
               src="/img/logoietg.png"
               width={82}
@@ -48,12 +48,12 @@ export default function Home() {
               <h3 className="font-medium text-gray-medium">
                 NOSSA HISTÓRIA E VALORES
               </h3>
-              <h2 className="mt-2 text-3xl font-bold leading-[125%] text-black xl:text-5xl">
+              <h2 className="mt-2 text-2xl font-bold leading-[125%] text-black sm:text-3xl xl:text-5xl">
                 Nossa igreja começou há 7 anos atrás
               </h2>
             </div>
 
-            <p className="text-lg text-gray-medium md:max-w-[500px]">
+            <p className="text-base text-gray-medium sm:text-lg md:max-w-[500px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse sagittis arcu quis nisi luctus, id accumsan felis
               tristique...
