@@ -50,7 +50,7 @@ export function FormContact() {
     subject,
     message,
   }) => {
-    const response = await fetch("/api/contact", {
+    const response = await fetch("api/contact", {
       method: "POST",
       body: JSON.stringify({
         name: name,

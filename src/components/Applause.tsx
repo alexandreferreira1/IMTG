@@ -20,7 +20,7 @@ export function Applause({ devotionalId }: ApplauseProps) {
   // Atualiza os aplausos no backend quando o valor debounced muda
   useEffect(() => {
     const updateApplause = async () => {
-      await fetch("/api/applause", {
+      await fetch("api/applause", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -40,7 +40,7 @@ export function Applause({ devotionalId }: ApplauseProps) {
   useEffect(() => {
     const fetchInitialApplause = async () => {
       const response = await fetch(
-        "/api/applause?devotionalId=${devotionalId}",
+        "api/applause?devotionalId=${devotionalId}",
         { cache: "no-store" },
       );
       if (response.ok) {

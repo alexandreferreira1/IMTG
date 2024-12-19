@@ -11,7 +11,7 @@ interface DevotionalsLikedType {
 }
 
 export async function LikedDevotionals() {
-  const response = await fetch("/api/liked-devotionals");
+  const response = await fetch("api/liked-devotionals");
 
   let likedDevotionals = [] as string[];
 
