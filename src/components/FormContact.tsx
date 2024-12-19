@@ -1,6 +1,5 @@
 "use client";
 
-import { BASE_URL } from "@/utils/get-url";
 import * as yup from "yup";
 import { TextArea } from "@/components/TextArea";
 import { Input } from "@/components/Input";
@@ -51,7 +50,7 @@ export function FormContact() {
     subject,
     message,
   }) => {
-    const response = await fetch(`${BASE_URL}/api/contact`, {
+    const response = await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
         name: name,

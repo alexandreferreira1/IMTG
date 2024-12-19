@@ -3,7 +3,6 @@
 import { HandsClapping } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useState } from "react";
 import { useDebouncedValue } from "@/hooks/useDebouncedValue";
-import { BASE_URL } from "@/utils/get-url";
 
 interface ApplauseProps {
   devotionalId: string;
@@ -21,7 +20,7 @@ export function Applause({ devotionalId }: ApplauseProps) {
   // Atualiza os aplausos no backend quando o valor debounced muda
   useEffect(() => {
     const updateApplause = async () => {
-      await fetch(`${BASE_URL}/api/applause`, {
+      await fetch("/api/applause", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -41,7 +40,7 @@ export function Applause({ devotionalId }: ApplauseProps) {
   useEffect(() => {
     const fetchInitialApplause = async () => {
       const response = await fetch(
-        `${BASE_URL}/api/applause?devotionalId=${devotionalId}`,
+        "/api/applause?devotionalId=${devotionalId}",
         { cache: "no-store" },
       );
       if (response.ok) {
