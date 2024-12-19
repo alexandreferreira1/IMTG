@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      from: '"IMTG" <contato@imtg.com.br>',
+      from: `"IMTG" <${receiver}>`,
       to: receiver,
       subject,
       text: `Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`,
