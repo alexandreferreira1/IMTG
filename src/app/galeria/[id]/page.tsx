@@ -11,6 +11,8 @@ interface GalleryDetailsProps {
   };
 }
 
+export const revalidate = 60;
+
 export default async function GalleryDetails({ params }: GalleryDetailsProps) {
   const query = GetGalleryByIdQuery(params.id);
   const gallery = (await makeRequest(query)) as GalleryDetailsType;
