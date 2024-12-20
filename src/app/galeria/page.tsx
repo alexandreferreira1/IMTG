@@ -14,6 +14,8 @@ interface SearchParamsProps {
 
 const GALLERY_ITEMS = 3;
 
+export const revalidate = 60;
+
 export default async function Galeria({ searchParams }: SearchParamsProps) {
   const pageNumber = parseInt(searchParams?.page || "1", 10);
 
