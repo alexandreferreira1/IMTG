@@ -8,7 +8,7 @@ export function Footer() {
     <div className="z-10 bg-black-dark  px-4">
       <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-6 py-11 xl:flex-row">
         <div className="order-3 text-center text-white xl:order-1">
-          <p>IMTG © 2024</p>
+          <p>IMTG © 2025</p>
           <p>Todos os direitos reservados</p>
         </div>
 

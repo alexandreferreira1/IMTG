@@ -136,6 +136,7 @@ export function FormContact() {
         title={isSubmitting ? "Carregando..." : "Enviar"}
         variation="secondary"
         disabled={isSubmitting}
+        className="w-full xl:w-fit"
       />
     </form>
   );

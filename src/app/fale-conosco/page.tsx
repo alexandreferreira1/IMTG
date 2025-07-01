@@ -19,7 +19,7 @@ export default function FaleConosco() {
         <FormContact />
       </div>
 
-      {/* Contato */}
+      {/* Contato
       <div className=" mt-10 bg-gray-thin py-24 xl:mt-0">
         <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-16 md:flex-row xl:gap-32">
           <div className="flex w-full max-w-[320px] flex-col items-center px-5 xl:items-start xl:px-0 ">
@@ -69,7 +69,7 @@ export default function FaleConosco() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

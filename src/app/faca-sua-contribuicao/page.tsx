@@ -15,12 +15,10 @@ export default function Contribuicao() {
               FAÇA UMA CONTRIBUIÇÃO COM PIX ATRAVÉS DO QR CODE
             </h2>
             <p className="pb-6 text-lg text-gray-regular">
-              Donec ut ullamcorper quam. Vivamus sagittis, massa a accumsan
-              eleifend, risus mauris consequat purus, quis egestas erat ante sit
-              amet mauris.
+              Sua oferta é um gesto de fé e gratidão que faz a diferença. Contribua com o que sentir no coração e ajude a fortalecer esta obra. Você participa do que Deus está construindo aqui e abençoa vidas que têm sido transformadas por este ministério.
             </p>
             <p className="text-2xl text-black">
-              <b>Chave PIX:</b> 03.231284/0001-54
+              <b>Chave PIX:</b> 42.542.045/0001-38
             </p>
             <p className="text-2xl text-black">
               <b>Razão Social:</b> Igreja Ministerial Tempo da Graça
@@ -46,10 +44,7 @@ export default function Contribuicao() {
               Sua doação será destinada
             </h3>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              nisl libero, fringilla ac dignissim ac, maximus a nisi. Donec
-              bibendum quis odio eu fermentum. Sed luctus metus id eleifend
-              pretium. 
+              A sua contribuição tem um papel fundamental no avanço da missão da Igreja Ministerial Tempo da Graça. Cada oferta recebida com amor e generosidade é investida com responsabilidade e propósito, sempre visando glorificar a Deus e servir à comunidade. Por meio dela, conseguimos manter e expandir as ações que tocam vidas, edificam fé e espalham o amor de Cristo. 
             </p>
           </div>
 
@@ -65,9 +60,8 @@ export default function Contribuicao() {
                 Trabalho Social
               </h4>
               <p className="w-56 text-center text-gray-medium md:w-64">
-                Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
-                sed, porttitor feugiat ligula. Ut interdum augue odio, nec
-                egestas lectus fermentum nec.
+                Parte das doações é destinada a projetos sociais que levam auxílio a famílias em situação de vulnerabilidade. Seja por meio da doação de cestas básicas, visitas a comunidades carentes ou ações de compaixão, buscamos ser resposta prática ao amor de Deus para o próximo.
+
               </p>
             </div>
 
@@ -81,9 +75,8 @@ export default function Contribuicao() {
                 Edificação do Templo
               </h4>
               <p className="w-56 text-center text-gray-medium md:w-64">
-                Sed at molestie ipsum. Phasellus mi mauris, lobortis quis purus
-                sed, porttitor feugiat ligula. Ut interdum augue odio, nec
-                egestas lectus fermentum nec.
+                Com sua ajuda, conseguimos manter e aprimorar a estrutura física da nossa igreja, garantindo um ambiente seguro, acolhedor e preparado para receber a todos com dignidade. Investimos em reformas, manutenções, equipamentos e melhorias que sustentam a continuidade e o crescimento do ministério.
+
               </p>
             </div>
           </div>

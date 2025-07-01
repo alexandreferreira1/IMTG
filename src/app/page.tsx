@@ -90,7 +90,7 @@ export default function Home() {
                 </h2>
                 <p className="font-semibold text-black">Culto de Celebração</p>
                 <p className="text-gray-medium">Domingo às 18h</p>
-                <p className="font-semibold text-black">Culto de Libertação</p>
+                <p className="font-semibold text-black">Culto de Ensino</p>
                 <p className="text-gray-medium">Quinta às 19h</p>
               </div>
 
