@@ -118,7 +118,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/a/IMTG/prisma/generated/client",
+      "value": "/home/lucasbarque/workspace/lucasbarque/imtg/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -127,12 +127,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-1.1.x",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/a/IMTG/prisma/schema.prisma",
+    "sourceFilePath": "/home/lucasbarque/workspace/lucasbarque/imtg/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "sa-east-1.graphassets.com",
       },
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+      },
     ],
   },
   logging: {
