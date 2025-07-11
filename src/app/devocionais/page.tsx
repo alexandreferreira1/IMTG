@@ -23,7 +23,7 @@ export const revalidate = 60;
 export default async function Devocionais({ searchParams }: SearchParamsProps) {
   const pageNumber = parseInt(searchParams?.page || "1", 10);
 
-  const { devotionals, devotionalsConnection } = (await makeRequest(
+  const devotionalsData = (await makeRequest(
     GetDevotionalsQuery({
       searchTerm: searchParams?.search,
       first: DEVOTIONALS_ITEMS,
@@ -31,7 +31,9 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
     }),
   )) as DevotionalList;
 
-  const { count } = devotionalsConnection?.aggregate || { count: 0 };
+  const { count } = devotionalsData.devotionalsConnection?.aggregate || {
+    count: 0,
+  };
   const pageTotal = Math.ceil(count / DEVOTIONALS_ITEMS);
 
   return (
@@ -42,7 +44,7 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
           subtitle="Dedique um tempo para meditar na Palavra"
         />
 
-        {searchParams?.search && devotionals.length !== 0 && (
+        {searchParams?.search && devotionalsData.devotionals.length !== 0 && (
           <div className="mx-9 max-w-[702px] pb-8 text-base text-red-regular md:text-xl">
             Você pesquisou por <strong>"{searchParams?.search}"</strong>, abaixo
             estão os resultados:
@@ -51,8 +53,8 @@ export default async function Devocionais({ searchParams }: SearchParamsProps) {
 
         <div className="mx-5 flex justify-center gap-36 xl:mx-0">
           <section>
-            {devotionals.length > 0 ? (
-              devotionals.map((devotional) => (
+            {devotionalsData?.devotionals.length > 0 ? (
+              devotionalsData?.devotionals.map((devotional) => (
                 <DevotionalItem
                   key={devotional.id}
                   id={devotional.id}
