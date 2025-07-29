@@ -21,11 +21,11 @@ export default function Home() {
       <section className="mx-auto flex max-w-screen-xl flex-col items-center gap-8 py-10  xl:flex-row xl:gap-[84px] xl:py-20">
         <div className="relative hidden shrink-0 md:block">
           <Image
-            src="/img/fachada-exemplo.jpg"
+            src="/img/fachada-imtg.jpeg"
             width={550}
             height={680}
-            alt="Exemple Image"
-            className="object-cover xl:h-[680px] xl:w-[550px]"
+            alt="Fachada IMTG"
+            className="object-cover object-left xl:h-[680px] xl:w-[550px]"
           />
 
           <div className="bg-slate bottom-0 right-[-190px] hidden  h-[200px] w-full items-center justify-center px-10 xl:absolute xl:flex xl:w-[403px]">
@@ -48,13 +48,12 @@ export default function Home() {
               NOSSA HISTÓRIA E VALORES
             </h2>
             <h3 className="mt-2 text-2xl font-bold leading-[125%] text-black sm:text-3xl xl:text-5xl">
-              Nossa igreja começou há 7 anos atrás
+              Nossa igreja começou há 8 anos atrás
             </h3>
           </div>
 
           <p className="text-base text-gray-medium sm:text-lg md:max-w-[500px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            sagittis arcu quis nisi luctus, id accumsan felis tristique...
+            A Igreja Ministerial Tempo da Graça nasceu não apenas como um sonho humano, mas como um projeto que primeiro floresceu no coração de Deus...
           </p>
           <Link href="/sobre">
             <ButtonArrow />
