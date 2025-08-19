@@ -3,7 +3,7 @@ export const GetGalleryByIdQuery = (id: string) => `query GetGalleryById {
       title
       date
       id
-      photos {
+      photos (first: 100){
         id
         url
       }

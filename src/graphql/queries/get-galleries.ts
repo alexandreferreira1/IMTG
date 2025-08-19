@@ -19,7 +19,7 @@ interface GetGalleriesParams {
         title
         date
         id
-        photos {
+        photos (first: 100){
             id
             url
         }
