@@ -72,7 +72,7 @@ export default function Sobre() {
 
       {/* Sobre 3 */}
       <Image
-        src="/img/images/Rectangle 15.png"
+        src="https://sa-east-1.graphassets.com/clx3ksf110bh406kf46ng8pcn/cmehuornh1a0107kixo1ahahd"
         width={1016}
         height={519}
         alt=""
@@ -91,28 +91,28 @@ export default function Sobre() {
       {/* Sobre 4 */}
       <section className="mx-5 flex flex-wrap gap-3 pb-24 xl:mx-0 xl:gap-5">
         <Image
-          src="/img/images/gallery-about-1.jpg"
+          src="https://sa-east-1.graphassets.com/clx3ksf110bh406kf46ng8pcn/cmehuorh119jk07kikrlok30y"
           width={498}
           height={332}
           alt=""
           className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
         />
         <Image
-          src="/img/images/gallery-about-2.jpg"
+          src="https://sa-east-1.graphassets.com/clx3ksf110bh406kf46ng8pcn/cmehuoriv19td07kftsnw3lor"
           width={498}
           height={332}
           alt=""
           className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
         />
         <Image
-          src="/img/images/gallery-about-3.jpg"
+          src="https://sa-east-1.graphassets.com/clx3ksf110bh406kf46ng8pcn/cmehuork519tt07kf8i0rv4la"
           width={498}
           height={332}
           alt=""
           className="object-cover transition-all duration-700 hover:scale-105 hover:cursor-pointer hover:duration-700 md:h-[250px] md:w-[49%] lg:h-[300px] xl:h-[332px] xl:w-[498px] "
         />
         <Image
-          src="/img/images/gallery-about-4.jpg"
+          src="https://sa-east-1.graphassets.com/clx3ksf110bh406kf46ng8pcn/cmehuork619tv07kfyblieotx"
           width={498}
           height={332}
           alt=""

@@ -8,7 +8,7 @@ export default function Home() {
     <>
       {/* Banner */}
       <section
-        className="-mt-20 h-[400px] bg-[url('/img/images/banner-home1.png')] bg-cover bg-center bg-no-repeat lg:h-[700px]"
+        className="-mt-20 h-[400px] bg-[url('/img/capa1.jpg')] bg-cover bg-center bg-no-repeat lg:h-[700px]"
         // style={{ backgroundPositionY: "50%" }}
       >
         <div className="bg-blue-dark/70 flex h-full w-full flex-col items-center justify-end pb-11 text-3xl font-bold text-white sm:text-4xl lg:text-6xl">
