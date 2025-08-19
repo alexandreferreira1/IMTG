@@ -7,7 +7,7 @@ export function ButtonShowMoreAbout() {
   const { width } = useWindowDimentions();
 
   return (
-    <Link href="/galeria">
+    <Link href="https://www.imtg.com.br/galeria/cmehrgnp018rg07ki4t69y7a9">
       <Button title="VER MAIS FOTOS" fullsize={width < 1024} />
     </Link>
   );
